@@ -10,6 +10,7 @@ import {
     ProjectDescription,
     ProjectDetails,
     ProjectImage,
+    ProjectSummary,
     ProjectTitle,
     Section,
     TechnologyItem,
@@ -68,6 +69,22 @@ const Project1 = () => {
                     <ProjectTitle>ChatEAT</ProjectTitle>
                     <ProjectDescription>
                         맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇
+                        <ProjectSummary>
+                            <p><strong>개발 기간:</strong> 2024.08 ~ 2024.09 <span>(2개월)</span></p>
+                            <p><strong>개발 인원:</strong> 6명 <span>(팀프로젝트)</span></p>
+                            <p><strong>담당 역할:</strong> 백엔드, 프론트엔드</p>
+                            <p>
+                                <strong>세부 내용:</strong>
+                                <ul>
+                                    <li>서비스 기획 및 전체 프로젝트 진행 <span>(기여도 60%)</span></li>
+                                    <li>로그인 및 회원 관리, 관련 페이지 <span>(기여도 100%)</span></li>
+                                    <li>관리자 기능 및 관리자 페이지 <span>(기여도 100%)</span></li>
+                                    <li>채팅 기능 <span>(기여도 40%)</span></li>
+                                    <li>인증 및 보안 <span>(기여도 100%)</span></li>
+                                </ul>
+                            </p>
+                        </ProjectSummary>
+
                     </ProjectDescription>
                     <ProjectDetails>
                         <Section id="techstack">

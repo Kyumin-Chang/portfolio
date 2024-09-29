@@ -136,7 +136,7 @@ export const SocialButton = styled.a`
 `;
 
 export const Section = styled.section`
-    padding: 60px 40px;
+    padding: 50px 40px;
     text-align: center;
 
     h2 {
@@ -231,6 +231,7 @@ export const CardContent = styled.div`
     }
 
     p {
+
         font-size: 1.5rem;
         margin-bottom: 20px;
         margin-left: 40px;
@@ -253,6 +254,7 @@ export const ReadMoreButton = styled.button`
     border-radius: 30px;
     margin-left: 40px;
     font-size: 1.4rem;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 
@@ -275,6 +277,64 @@ export const ReadMoreArrowButton = styled.button`
     &:hover {
         background-color: ${({theme}) => theme.reverseButtonColor};
         color: ${({theme}) => theme.textColor};;
+    }
+`;
+
+export const AboutMeGrid = styled.div`
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+`
+export const AboutMeCategory = styled.div`
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid ${({theme}) => theme.borderColor};
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: ${({theme}) => theme.skillGridColor};
+
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: ${({theme}) => theme.textColor};
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: ${({theme}) => theme.textColor};
+        text-align: left;
+        width: 60%;
+    }
+`;
+
+export const EducationList = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 90px;
+    }
+`;
+
+export const EducationInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    color: ${({theme}) => theme.textColor};
+
+    p {
+        margin: 0;
+        font-size: 1.2rem;
+        text-align: left;
+        color: ${({theme}) => theme.textColor};
+        width: 100%;
     }
 `;
 
@@ -348,4 +408,30 @@ export const PrevArrow = styled(Arrow)`
 export const NextArrow = styled(Arrow)`
     right: 0;
     text-align: left;
+`;
+
+export const ContactDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+`;
+
+export const ContactItem = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: ${({theme}) => theme.textColor};
+    gap: 15px;
+
+    .contact-icon {
+        font-size: 2rem;
+        color: ${({theme}) => theme.linkHoverColor};
+    }
+
+    span {
+        font-size: 1.5rem;
+        color: ${({theme}) => theme.textColor};
+    }
 `;

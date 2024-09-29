@@ -4,8 +4,14 @@ import Slider from "react-slick";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import {
+    AboutMeCategory,
+    AboutMeGrid,
     Card,
     CardContent,
+    ContactDetails,
+    ContactItem,
+    EducationInfo,
+    EducationList,
     LeftContent,
     LowerSection,
     MainSection,
@@ -30,18 +36,21 @@ import {
     FaAws,
     FaCss3Alt,
     FaDocker,
+    FaEnvelope,
     FaGit,
     FaGithub,
     FaHtml5,
     FaJava,
     FaJsSquare,
     FaNodeJs,
+    FaPhone,
     FaReact
 } from 'react-icons/fa';
 import {
     SiFigma,
     SiGithubactions,
     SiJira,
+    SiLinkedin,
     SiMongodb,
     SiMysql,
     SiNextdotjs,
@@ -139,7 +148,7 @@ const Home = () => {
                 <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
                 <MainSection>
                     <UpperSection>
-                        <SplitTextLine>Full-stack</SplitTextLine>
+                        <SplitTextLine>Backend</SplitTextLine>
                         <StyledButton>
                             <span>Projects →</span>
                         </StyledButton>
@@ -158,6 +167,8 @@ const Home = () => {
                     <SocialLinks>
                         <SocialButton href="https://github.com/Kyumin-Chang"
                                       target="_blank"><FaGithub/> Github</SocialButton>
+                        <SocialButton href="https://kr.linkedin.com/"
+                                      target="_blank"><SiLinkedin/> LinkedIn</SocialButton>
                         <SocialButton href="https://velog.io/@lord/posts"
                                       target="_blank"><SiVelog/> Velog</SocialButton>
                     </SocialLinks>
@@ -180,11 +191,27 @@ const Home = () => {
                         ))}
                     </Slider>
                 </SliderContainer>
-
                 <Section id="about-me">
                     <h2>About Me</h2>
-                    <p>I am a passionate designer and developer. I love solving complex problems and creating
-                        user-friendly solutions that people can use every day.</p>
+                    <AboutMeGrid>
+                        <AboutMeCategory>
+                            <h3>Info</h3>
+                            <p>이름 : 장규민</p>
+                            <p>생년월일 : 1998.05.29</p>
+                            <p>학력 : 고려대학교 컴퓨터학과</p>
+                            <p>부전공 : 정보보호융합전공</p>
+                        </AboutMeCategory>
+                        <AboutMeCategory>
+                            <h3>Education</h3>
+                            <EducationList>
+                                <img className="skill-icon" src="/src/assets/ktbIcon.png" alt="KTB Icon"/>
+                                <EducationInfo>
+                                    <p>2024.07.~2024.12.</p>
+                                    카카오테크부트캠프 1기
+                                </EducationInfo>
+                            </EducationList>
+                        </AboutMeCategory>
+                    </AboutMeGrid>
                 </Section>
                 <Section id="skills">
                     <h2>Skills</h2>
@@ -290,17 +317,18 @@ const Home = () => {
                         </SkillCategory>
                     </SkillsGrid>
                 </Section>
-                <Section id="careers">
-                    <h2>Careers</h2>
-                    <p>With 3 years of experience as a Product Designer and Frontend Developer, I have worked on diverse
-                        projects ranging from websites to mobile apps. Currently, I am working as a freelancer and I am
-                        open to new opportunities.</p>
-                </Section>
                 <Section id="contacts">
                     <h2>Contacts</h2>
-                    <p>With 3 years of experience as a Product Designer and Frontend Developer, I have worked on diverse
-                        projects ranging from websites to mobile apps. Currently, I am working as a freelancer and I am
-                        open to new opportunities.</p>
+                    <ContactDetails>
+                        <ContactItem>
+                            <FaPhone className="contact-icon"/>
+                            <span>+82 10-1234-5678</span>
+                        </ContactItem>
+                        <ContactItem>
+                            <FaEnvelope className="contact-icon"/>
+                            <span>kyumin0529@naver.com</span>
+                        </ContactItem>
+                    </ContactDetails>
                 </Section>
                 <Footer/>
             </PageWrapper>

@@ -14,19 +14,60 @@ export const ProjectContainer = styled.div`
 `;
 
 export const ProjectTitle = styled.h1`
-    font-size: 3.5rem;
+    font-size: 6rem;
     margin-bottom: 20px;
     color: ${({theme}) => theme.textColor};
 `;
 
-export const ProjectDescription = styled.p`
+export const ProjectDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 1.5rem;
-    margin-bottom: 40px;
     color: ${({theme}) => theme.textColor};
 `;
 
+export const ProjectSummary = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+
+    p {
+        font-size: 1.4rem;
+        color: ${({theme}) => theme.textColor};
+        margin-bottom: 10px;
+    }
+
+    strong {
+        font-weight: 600;
+        color: ${({theme}) => theme.textColor};
+    }
+
+    ul {
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    li {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        margin-bottom: 8px;
+        color: ${({theme}) => theme.textColor};
+    }
+
+    span {
+        color: #FF9800;
+        font-weight: 500;
+    }
+`;
+
 export const ProjectDetails = styled.div`
-    margin-top: 40px;
+    margin-top: 20px;
 `;
 
 export const Section = styled.div`
@@ -34,7 +75,7 @@ export const Section = styled.div`
     text-align: center;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 20px;
         color: ${({theme}) => theme.textColor};
         position: relative;
