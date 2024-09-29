@@ -147,8 +147,8 @@ const Home = () => {
                     <LowerSection>
                         <LeftContent>
                             <p>
-                                My goal is to write maintainable, clean, and understandable code to make development
-                                enjoyable.
+                                A developer who never stops exploring new technologies.
+                                Driving greater results through teamwork.
                             </p>
                         </LeftContent>
                         <RightContent>
@@ -172,7 +172,8 @@ const Home = () => {
                                     <ReadMore>
                                         <ReadMoreButton><Link to={`/project/${project.id}`}>Read
                                             more</Link></ReadMoreButton>
-                                        <ReadMoreArrowButton> → </ReadMoreArrowButton>
+                                        <ReadMoreArrowButton><Link
+                                            to={`/project/${project.id}`}> → </Link></ReadMoreArrowButton>
                                     </ReadMore>
                                 </CardContent>
                             </Card>

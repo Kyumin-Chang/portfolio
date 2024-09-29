@@ -2,24 +2,72 @@ import React from 'react';
 import styled from 'styled-components';
 import {FaMoon, FaSun} from 'react-icons/fa';
 import {Link as ScrollLink} from 'react-scroll';
-import {Link} from "react-router-dom";
+import {Link, useLocation} from 'react-router-dom';
 
 const Header = ({toggleTheme, isDarkMode}) => {
+    const location = useLocation();
+
+    const isProjectPage = location.pathname.startsWith('/project');
+
     return (
         <HeaderWrapper>
             <Navbar>
                 <Logo><Link to={"/"}>Kyumin Chang</Link></Logo>
                 <NavListWrapper>
                     <NavList>
-                        <NavItem><ScrollLink to="about-me" smooth={true} duration={500} offset={-40}>About
-                            me</ScrollLink></NavItem>
-                        <NavItem><ScrollLink to="skills" smooth={true} duration={500}
-                                             offset={-40}>Skills</ScrollLink></NavItem>
-                        <NavItem><ScrollLink to="projects" smooth={true} duration={500}
-                                             offset={-40}>Projects</ScrollLink></NavItem>
-                        <NavItem><ScrollLink to="careers" smooth={true} duration={500} offset={-40}>Careers</ScrollLink></NavItem>
-                        <NavItem><ScrollLink to="contacts" smooth={true} duration={500}
-                                             offset={-40}>Contacts</ScrollLink></NavItem>
+                        {isProjectPage ? (
+                            <>
+                                <NavItem><Link to="/">Home</Link></NavItem>
+                                <NavItem>
+                                    <ScrollLink to="techstack" smooth={true} duration={500} offset={-100}>
+                                        Tech Stack
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="architecture" smooth={true} duration={500} offset={-100}>
+                                        Architecture
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="details" smooth={true} duration={500} offset={-100}>
+                                        Details
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="implementation" smooth={true} duration={500} offset={-100}>
+                                        Implementation
+                                    </ScrollLink>
+                                </NavItem>
+                            </>
+                        ) : (
+                            <>
+                                <NavItem>
+                                    <ScrollLink to="about-me" smooth={true} duration={500} offset={-40}>
+                                        About me
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="skills" smooth={true} duration={500} offset={-40}>
+                                        Skills
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="projects" smooth={true} duration={500} offset={-120}>
+                                        Projects
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="careers" smooth={true} duration={500} offset={-40}>
+                                        Careers
+                                    </ScrollLink>
+                                </NavItem>
+                                <NavItem>
+                                    <ScrollLink to="contacts" smooth={true} duration={500} offset={-40}>
+                                        Contacts
+                                    </ScrollLink>
+                                </NavItem>
+                            </>
+                        )}
                     </NavList>
                 </NavListWrapper>
                 <ThemeToggleWrapper>
