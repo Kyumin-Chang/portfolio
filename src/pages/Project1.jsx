@@ -21,7 +21,7 @@ import {
     TechnologyList
 } from '../styles/ProjectStyles';
 import {FaAws, FaDocker, FaGithub, FaReact} from 'react-icons/fa';
-import {SiMongodb, SiMysql, SiNginx, SiRedis, SiSpring, SiSpringsecurity} from 'react-icons/si';
+import {SiMongodb, SiMysql, SiNginx, SiNotion, SiRedis, SiSpring, SiSpringsecurity} from 'react-icons/si';
 
 const lightTheme = {
     background: '#f0f0f5',
@@ -77,6 +77,9 @@ const Project1 = () => {
                         <Social>
                             <SocialLink href="https://github.com/orgs/kakaotechbootcamp-team13/repositories"
                                         target="_blank"><FaGithub/> Github</SocialLink>
+                            <SocialLink
+                                href="https://ktb-1-group-13.notion.site/Chat-EAT-a28d1080473940cc93481185200653a1?pvs=4"
+                                target="_blank"><SiNotion/> Notion</SocialLink>
                         </Social>
                         <ProjectSummary>
                             <p><strong>개발 기간:</strong> 2024.08 ~ 2024.09 <span>(2개월)</span></p>
@@ -163,19 +166,17 @@ const Project1 = () => {
                                     <h3>Frontend</h3>
                                     <h4>[회원 관리]</h4>
                                     <ul>
-                                        <li>사용자의 이메일과 패스워드, 닉네임을 받아 회원가입을 진행합니다.</li>
-                                        <ul>
-                                            <li>
-                                                이메일, 닉네임의 경우 중복된 값을 확인하기 위해 백엔드 api를 활용합니다.
-                                            </li>
-                                        </ul>
+                                        <li>사용자의 이메일과 패스워드, 닉네임을 받아 회원가입을 진행합니다.
+                                            <ul>
+                                                <li>이메일, 닉네임의 경우 중복된 값을 확인하기 위해 백엔드 api를 활용합니다.</li>
+                                            </ul>
+                                        </li>
                                         <li>닉네임, 비밀번호, 회원탈퇴의 경우 변경 완료 메시지를 추가하여 사용자의 편의성을 증가시켰습니다.</li>
                                         <li>카카오 소셜 로그인을 처음 사용한 유저는 소셜 로그인 전용 회원가입 페이지로 Redirect되어 닉네임을 추가로 입력합니다.</li>
                                         <li>유저의 프로필 사진은 6개의 이미지가 존재하며 이를 선택하여 적용할 수 있습니다.</li>
                                         <li>accessToken을 local storage에 저장하여 로그인 여부를 확인합니다.</li>
                                         <li>refreshToken은 쿠키로 전달하여 보안성을 유지합니다.</li>
                                     </ul>
-                                    
                                 </ContentCategory>
                                 <ContentCategory>
                                     <h3>Education</h3>

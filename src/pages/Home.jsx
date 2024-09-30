@@ -198,8 +198,7 @@ const Home = () => {
                             <h3>Info</h3>
                             <p>이름 : 장규민</p>
                             <p>생년월일 : 1998.05.29</p>
-                            <p>학력 : 컴퓨터학과</p>
-                            <p>부전공 : 정보보호융합전공</p>
+                            <p>전공 : 컴퓨터</p>
                         </AboutMeCategory>
                         <AboutMeCategory>
                             <h3>Education</h3>
@@ -322,7 +321,7 @@ const Home = () => {
                     <ContactDetails>
                         <ContactItem>
                             <FaPhone className="contact-icon"/>
-                            <span>+82 10-9509-7665</span>
+                            <span>+82 10-1234-5678</span>
                         </ContactItem>
                         <ContactItem>
                             <FaEnvelope className="contact-icon"/>

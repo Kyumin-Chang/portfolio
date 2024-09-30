@@ -37,12 +37,13 @@ export const ProjectDescription = styled.div`
 export const Social = styled.div`
     display: flex;
     justify-content: center;
+    gap: 30px;
     margin: 40px;
 `;
 
 export const SocialLink = styled.a`
     display: flex;
-    width: 250px;
+    width: 200px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -198,17 +199,37 @@ export const ContentCategory = styled.div`
 
     ul {
         text-align: left;
-        padding-left: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
         margin-top: 10px;
-    }
 
-    li {
-        list-style: inside;
-        font-size: 1.4rem;
-        line-height: 1.8;
-        margin-bottom: 8px;
+        li {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+
+            &:before {
+                content: "*";
+                position: absolute;
+                left: 0;
+                top: 2px;
+                font-size: 1.6rem;
+            }
+
+            ul li {
+                padding-left: 20px;
+
+                &:before {
+                    content: "✔";
+                    font-size: 1.2rem;
+                }
+            }
+        }
     }
 `;
+
 
 export const ImageGallery = styled.div`
     display: flex;
