@@ -9,7 +9,7 @@ export const PageWrapper = styled.div`
 export const ProjectContainer = styled.div`
     padding: 60px 40px;
     text-align: center;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 `;
 
@@ -25,6 +25,42 @@ export const ProjectDescription = styled.div`
     justify-content: center;
     font-size: 1.5rem;
     color: ${({theme}) => theme.textColor};
+
+    p {
+        font-size: 1.4rem;
+        color: ${({theme}) => theme.textColor};
+        margin-top: 10px;
+    }
+
+`;
+
+export const Social = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+`;
+
+export const SocialLink = styled.a`
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    color: ${({theme}) => theme.textColor};
+    border-radius: 40px;
+    font-size: 1.4rem;
+    transition: background-color 0.3s, color 0.3s, border 0.3s ease-in-out;
+    border: 1px solid ${({theme}) => theme.textColor};
+
+    &:hover {
+        color: ${({theme}) => theme.reverseTextColor};
+        background-color: ${({theme}) => theme.reverseColor};
+    }
+
+    svg {
+        font-size: 1.7rem;
+    }
 `;
 
 export const ProjectSummary = styled.div`
@@ -32,7 +68,7 @@ export const ProjectSummary = styled.div`
     flex-direction: column;
     gap: 15px;
     justify-content: center;
-    margin: 40px auto;
+    margin: auto;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
@@ -40,6 +76,7 @@ export const ProjectSummary = styled.div`
     p {
         font-size: 1.4rem;
         color: ${({theme}) => theme.textColor};
+        margin-top: 0;
         margin-bottom: 10px;
     }
 
@@ -94,11 +131,11 @@ export const Section = styled.div`
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         line-height: 1.8;
         color: ${({theme}) => theme.textColor};
         text-align: center;
-        max-width: 800px;
+        max-width: 900px;
         margin: 10px auto;
     }
 `;
@@ -125,10 +162,52 @@ export const TechnologyItem = styled.div`
     }
 `;
 
-export const ArchitectureDiagram = styled.div`
+export const ImageContainer = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 20px;
+`;
+
+export const ProjectContentGrid = styled.div`
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+`;
+
+export const ContentCategory = styled.div`
+    width: 1000px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid ${({theme}) => theme.borderColor};
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: ${({theme}) => theme.skillGridColor};
+
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: ${({theme}) => theme.textColor};
+    }
+
+    h4 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    li {
+        list-style: inside;
+        font-size: 1.4rem;
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
 `;
 
 export const ImageGallery = styled.div`
@@ -140,7 +219,7 @@ export const ImageGallery = styled.div`
 
 export const ProjectImage = styled.img`
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
