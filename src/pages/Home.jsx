@@ -102,31 +102,31 @@ const projects = [
         id: 1,
         title: 'ChatEAT',
         description: '맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇',
-        image: '/src/assets/project1.png',
+        image: '/project1.png',
     },
     {
         id: 2,
         title: 'Orli Climbing',
         description: '주변 클라이밍 센터에 대한 정보 제공 서비스',
-        image: '/src/assets/project2.png',
+        image: '/project2.png',
     },
     {
         id: 3,
         title: 'Golang',
         description: '갈등 완화/커뮤니케이션 상승 채팅 웹 서비스',
-        image: '/src/assets/project3.png',
+        image: '/project3.png',
     },
     {
         id: 4,
         title: 'Daily Nest',
         description: '나만의 일상을 기록하는 공간 웹 서비스',
-        image: '/src/assets/project4.png',
+        image: '/project4.png',
     },
     {
         id: 5,
         title: 'Portfolio',
         description: '포트폴리오 웹사이트 제작하기',
-        image: '/src/assets/project5.png',
+        image: '/project5.png',
     }
 ];
 
@@ -215,7 +215,7 @@ const Home = () => {
                         <AboutMeCategory>
                             <h3>Education</h3>
                             <EducationList>
-                                <img className="skill-icon" src="/src/assets/ktbIcon.png" alt="KTB Icon"/>
+                                <img className="skill-icon" src="/ktbIcon.png" alt="KTB Icon"/>
                                 <EducationInfo>
                                     <p>2024.07.~2024.12.</p>
                                     카카오테크부트캠프 1기

@@ -143,7 +143,7 @@ const Project1 = () => {
                             <h2>프로젝트 수행 기간</h2>
                             <ImageContainer>
                                 <ProjectImage
-                                    src="/src/assets/ChatEATSchedule.png"
+                                    src="/ChatEATSchedule.png"
                                     alt="ChatEAT Schedule"
                                 />
                             </ImageContainer>
@@ -152,7 +152,7 @@ const Project1 = () => {
                             <h2>전체 플로우 차트</h2>
                             <ImageContainer>
                                 <ProjectImage
-                                    src="/src/assets/chatEatFlowChart.png"
+                                    src="/chatEATFlowChart.png"
                                     alt="ChatEAT Flow Chart"
                                 />
                             </ImageContainer>
@@ -161,7 +161,7 @@ const Project1 = () => {
                             <h2>프로젝트 아키텍쳐</h2>
                             <ImageContainer>
                                 <ProjectImage
-                                    src="/src/assets/chatEATArchitechture.png"
+                                    src="/chatEATArchitechture.png"
                                     alt="ChatEAT Architecture Diagram"
                                 />
                             </ImageContainer>
@@ -249,47 +249,47 @@ const Project1 = () => {
                                 <h3>프로젝트 시연 이미지</h3>
                                 <p>홈 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEAThome.png"
+                                    src="/chatEAThome.png"
                                     alt="ChatEAT Implementation Image 1"
                                 />
                                 <p>회원가입 화면입니다. 이메일과 닉네임을 입력하면 자동으로 중복 검사를 수행합니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATregister.png"
+                                    src="/chatEATregister.png"
                                     alt="ChatEAT Implementation Image 2"
                                 />
                                 <p>로그인 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATlogin.png"
+                                    src="/chatEATlogin.png"
                                     alt="ChatEAT Implementation Image 3"
                                 />
                                 <p>로그인 후 홈 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEAThomelogin.png"
+                                    src="/public/chatEAThomelogin.png"
                                     alt="ChatEAT Implementation Image 4"
                                 />
                                 <p>회원 정보 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATinfo.png"
+                                    src="/chatEATinfo.png"
                                     alt="ChatEAT Implementation Image 5"
                                 />
                                 <p>회원 정보 수정 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATedit.png"
+                                    src="/chatEATedit.png"
                                     alt="ChatEAT Implementation Image 6"
                                 />
                                 <p>아바타 수정 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATavatar.png"
+                                    src="/chatEATavatar.png"
                                     alt="ChatEAT Implementation Image 7"
                                 />
                                 <p>채팅 화면입니다. 채팅을 보내면 AI 서버와 통신하여 응답을 받아옵니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATchat.png"
+                                    src="/chatEATchat.png"
                                     alt="ChatEAT Implementation Image 8"
                                 />
                                 <p>좋아요 화면입니다.</p>
                                 <ProjectImage
-                                    src="/src/assets/chatEATlike.png"
+                                    src="/chatEATlike.png"
                                     alt="ChatEAT Implementation Image 9"
                                 />
                             </ImageGallery>

@@ -48,7 +48,7 @@ export const SlideImg = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("/src/assets/chatEATslide.png");
+    background-image: url("/chatEATslide.png");
     background-size: cover;
     background-repeat: repeat-x;
     animation: slide-right 60s linear infinite;
