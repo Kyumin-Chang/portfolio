@@ -33,6 +33,7 @@ import {
     UpperSection
 } from '../styles/HomeStyles';
 import {
+    FaArrowRight,
     FaAws,
     FaCss3Alt,
     FaDocker,
@@ -64,6 +65,7 @@ import {
 } from "react-icons/si";
 import {CustomNextArrow, CustomPrevArrow} from '../components/CustomArrows';
 import {Link} from "react-router-dom";
+import ScrollToTopButton from "../components/ScrollToTopButton.jsx";
 
 const lightTheme = {
     background: '#f0f0f5',
@@ -75,7 +77,7 @@ const lightTheme = {
     reverseColor: '#222',
     reverseTextColor: '#fff',
     skillGridColor: '#efeff3',
-    cardBackgroundColor: 'rgba(255,255,255,0.77)',
+    cardBackgroundColor: 'rgba(230,230,230,0.67)',
     buttonColor: '#5a5a5a',
     reverseButtonColor: '#ffffff',
 };
@@ -119,6 +121,12 @@ const projects = [
         title: 'Daily Nest',
         description: '나만의 일상을 기록하는 공간 웹 서비스',
         image: '/src/assets/project4.png',
+    },
+    {
+        id: 5,
+        title: 'Portfolio',
+        description: '포트폴리오 웹사이트 제작하기',
+        image: '/src/assets/project5.png',
     }
 ];
 
@@ -134,7 +142,8 @@ const Home = () => {
         dots: false,
         infinite: true,
         autoplay: true,
-        speed: 500,
+        autoplaySpeed: 2000,
+        speed: 800,
         slidesToShow: 1,
         centerMode: true,
         centerPadding: "450px",
@@ -149,9 +158,11 @@ const Home = () => {
                 <MainSection>
                     <UpperSection>
                         <SplitTextLine>Backend</SplitTextLine>
-                        <StyledButton>
+                        <Link
+                            to={`/project/1`}><StyledButton>
                             <span>Projects →</span>
                         </StyledButton>
+                        </Link>
                     </UpperSection>
                     <LowerSection>
                         <LeftContent>
@@ -181,10 +192,12 @@ const Home = () => {
                                     <h3>{project.title}</h3>
                                     <p>{project.description}</p>
                                     <ReadMore>
-                                        <ReadMoreButton><Link to={`/project/${project.id}`}>Read
-                                            more</Link></ReadMoreButton>
-                                        <ReadMoreArrowButton><Link
-                                            to={`/project/${project.id}`}> → </Link></ReadMoreArrowButton>
+                                        <Link to={`/project/${project.id}`}>
+                                            <ReadMoreButton>Read
+                                                more</ReadMoreButton></Link>
+                                        <Link
+                                            to={`/project/${project.id}`}><ReadMoreArrowButton> <FaArrowRight/>
+                                        </ReadMoreArrowButton></Link>
                                     </ReadMore>
                                 </CardContent>
                             </Card>
@@ -198,7 +211,6 @@ const Home = () => {
                             <h3>Info</h3>
                             <p>이름 : 장규민</p>
                             <p>생년월일 : 1998.05.29</p>
-                            <p>전공 : 컴퓨터</p>
                         </AboutMeCategory>
                         <AboutMeCategory>
                             <h3>Education</h3>
@@ -321,7 +333,7 @@ const Home = () => {
                     <ContactDetails>
                         <ContactItem>
                             <FaPhone className="contact-icon"/>
-                            <span>+82 10-1234-5678</span>
+                            <span>+82 10-9509-7665</span>
                         </ContactItem>
                         <ContactItem>
                             <FaEnvelope className="contact-icon"/>
@@ -331,6 +343,7 @@ const Home = () => {
                 </Section>
                 <Footer/>
             </PageWrapper>
+            <ScrollToTopButton/>
         </ThemeProvider>
     );
 };

@@ -53,7 +53,7 @@ export const SplitTextLine = styled.div`
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: 10rem;
+    font-size: 12rem;
     line-height: 1;
     color: ${({theme}) => theme.primaryTextColor};
 `;
@@ -268,9 +268,10 @@ export const ReadMoreArrowButton = styled.button`
     background-color: ${({theme}) => theme.buttonColor};
     color: ${({theme}) => theme.reverseTextColor};
     border: none;
-    padding: 15px 20px;
+    justify-content: center;
+    padding: 15px 16px;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 

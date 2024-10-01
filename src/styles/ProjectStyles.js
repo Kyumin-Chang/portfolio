@@ -19,7 +19,7 @@ export const ProjectTitle = styled.h1`
     color: ${({theme}) => theme.textColor};
 `;
 
-export const ProjectDescription = styled.div`
+export const ProjectMain = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +31,38 @@ export const ProjectDescription = styled.div`
         color: ${({theme}) => theme.textColor};
         margin-top: 10px;
     }
+`;
 
+export const ProjectSlide = styled.div`
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+`;
+
+export const MainContent = styled.div`
+    position: relative;
+    z-index: 2;
+`;
+
+export const SlideImg = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/assets/chatEATslide.png");
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: slide-right 60s linear infinite;
+    opacity: 0.2;
+    z-index: 1;
+
+    @keyframes slide-right {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 5000px 0;
+        }
+    }
 `;
 
 export const Social = styled.div`
@@ -187,13 +218,13 @@ export const ContentCategory = styled.div`
     background-color: ${({theme}) => theme.skillGridColor};
 
     h3 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         margin-bottom: 15px;
         color: ${({theme}) => theme.textColor};
     }
 
     h4 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         margin-bottom: 10px;
     }
 
@@ -204,7 +235,7 @@ export const ContentCategory = styled.div`
         margin-top: 10px;
 
         li {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 12px;
             position: relative;
@@ -217,25 +248,58 @@ export const ContentCategory = styled.div`
                 top: 2px;
                 font-size: 1.6rem;
             }
+        }
 
-            ul li {
-                padding-left: 20px;
+        ul li {
+            padding-left: 20px;
 
-                &:before {
-                    content: "✔";
-                    font-size: 1.2rem;
-                }
+            &:before {
+                content: "✔";
+                font-size: 1.2rem;
             }
         }
     }
+}
 `;
 
+export const VideoContainer = styled.div`
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+`;
+
+export const ProjectVideo = styled.video`
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+`;
 
 export const ImageGallery = styled.div`
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    font-size: 1.2rem;
+    margin-top: 30px;
+
+    p {
+        font-size: 1.2rem;
+        margin-top: 80px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: -50px;
+    }
 `;
 
 export const ProjectImage = styled.img`

@@ -19,22 +19,22 @@ const Header = ({toggleTheme, isDarkMode}) => {
                             <>
                                 <NavItem><Link to="/">Home</Link></NavItem>
                                 <NavItem>
-                                    <ScrollLink to="techstack" smooth={true} duration={500} offset={-100}>
+                                    <ScrollLink to="techstack" smooth={true} duration={500} offset={-50}>
                                         Tech Stack
                                     </ScrollLink>
                                 </NavItem>
                                 <NavItem>
-                                    <ScrollLink to="architecture" smooth={true} duration={500} offset={-100}>
+                                    <ScrollLink to="architecture" smooth={true} duration={500} offset={-50}>
                                         Architecture
                                     </ScrollLink>
                                 </NavItem>
                                 <NavItem>
-                                    <ScrollLink to="details" smooth={true} duration={500} offset={-100}>
+                                    <ScrollLink to="details" smooth={true} duration={500} offset={-50}>
                                         Details
                                     </ScrollLink>
                                 </NavItem>
                                 <NavItem>
-                                    <ScrollLink to="implementation" smooth={true} duration={500} offset={-100}>
+                                    <ScrollLink to="implementation" smooth={true} duration={500} offset={-50}>
                                         Implementation
                                     </ScrollLink>
                                 </NavItem>
