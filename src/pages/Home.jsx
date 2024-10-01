@@ -44,7 +44,6 @@ import {
     FaJava,
     FaJsSquare,
     FaNodeJs,
-    FaPhone,
     FaReact
 } from 'react-icons/fa';
 import {
@@ -332,12 +331,8 @@ const Home = () => {
                     <h2>Contacts</h2>
                     <ContactDetails>
                         <ContactItem>
-                            <FaPhone className="contact-icon"/>
-                            <span>+82 10-9509-7665</span>
-                        </ContactItem>
-                        <ContactItem>
                             <FaEnvelope className="contact-icon"/>
-                            <span>kyumin0529@naver.com</span>
+                            <span>changkyumin0529@gmail.com</span>
                         </ContactItem>
                     </ContactDetails>
                 </Section>
