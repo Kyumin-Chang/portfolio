@@ -143,7 +143,7 @@ const Project1 = () => {
                             <h2>프로젝트 수행 기간</h2>
                             <ImageContainer>
                                 <ProjectImage
-                                    src="/ChatEATSchedule.png"
+                                    src="/chatEATSchedule.png"
                                     alt="ChatEAT Schedule"
                                 />
                             </ImageContainer>
@@ -264,7 +264,7 @@ const Project1 = () => {
                                 />
                                 <p>로그인 후 홈 화면입니다.</p>
                                 <ProjectImage
-                                    src="/public/chatEAThomelogin.png"
+                                    src="/chatEAThomelogin.png"
                                     alt="ChatEAT Implementation Image 4"
                                 />
                                 <p>회원 정보 화면입니다.</p>
