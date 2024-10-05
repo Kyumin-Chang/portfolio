@@ -35,7 +35,7 @@ export const LeftContent = styled.div`
     text-align: left;
 
     p {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: italic;
@@ -53,7 +53,7 @@ export const SplitTextLine = styled.div`
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: 12rem;
+    font-size: 10rem;
     line-height: 1;
     color: ${({theme}) => theme.primaryTextColor};
 `;
@@ -120,7 +120,7 @@ export const SocialButton = styled.a`
     padding: 15px 30px;
     color: ${({theme}) => theme.textColor};
     border-radius: 40px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     position: relative;
     transition: background-color 0.3s, color 0.3s, border 0.3s ease-in-out;
     border: 1px solid ${({theme}) => theme.textColor};
@@ -131,7 +131,7 @@ export const SocialButton = styled.a`
     }
 
     svg {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 `;
 
@@ -140,7 +140,7 @@ export const Section = styled.section`
     text-align: center;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 20px;
         color: ${({theme}) => theme.textColor};
         position: relative;
@@ -202,8 +202,8 @@ export const SliderContainer = styled.div`
 `;
 
 export const Card = styled.div`
-    width: 600px !important;
-    height: 350px !important;
+    width: 500px !important;
+    height: 300px !important;
     background-image: url(${({$image}) => $image});
     background-size: cover;
     background-position: center;
@@ -215,14 +215,14 @@ export const Card = styled.div`
 `;
 
 export const CardContent = styled.div`
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     background-color: ${({theme}) => theme.cardBackgroundColor};
     padding: 20px;
     border-radius: 0 20px 20px 0;
 
     h3 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-top: 40px;
         margin-bottom: 15px;
         margin-left: 40px;
@@ -232,7 +232,7 @@ export const CardContent = styled.div`
 
     p {
 
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-bottom: 20px;
         margin-left: 40px;
         color: ${({theme}) => theme.textColor};
@@ -250,10 +250,10 @@ export const ReadMoreButton = styled.button`
     background-color: ${({theme}) => theme.buttonColor};
     color: ${({theme}) => theme.reverseTextColor};
     border: none;
-    padding: 15px 40px;
+    padding: 15px 30px;
     border-radius: 30px;
     margin-left: 40px;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -269,9 +269,9 @@ export const ReadMoreArrowButton = styled.button`
     color: ${({theme}) => theme.reverseTextColor};
     border: none;
     justify-content: center;
-    padding: 15px 16px;
+    padding: 11px 14px;
     border-radius: 30px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 
@@ -298,7 +298,7 @@ export const AboutMeCategory = styled.div`
     background-color: ${({theme}) => theme.skillGridColor};
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin-bottom: 15px;
         color: ${({theme}) => theme.textColor};
     }
@@ -357,7 +357,7 @@ export const SkillCategory = styled.div`
     background-color: ${({theme}) => theme.skillGridColor};
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin-bottom: 15px;
         color: ${({theme}) => theme.textColor};
     }
@@ -376,12 +376,12 @@ export const SkillItem = styled.div`
     align-items: center;
     width: 250px;
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: ${({theme}) => theme.textColor};
 
     .skill-icon {
         margin-right: 10px;
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 `;
 
@@ -432,7 +432,7 @@ export const ContactItem = styled.div`
     }
 
     span {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: ${({theme}) => theme.textColor};
     }
 `;

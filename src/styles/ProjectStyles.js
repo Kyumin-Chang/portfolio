@@ -14,7 +14,7 @@ export const ProjectContainer = styled.div`
 `;
 
 export const ProjectTitle = styled.h1`
-    font-size: 6rem;
+    font-size: 5rem;
     margin-bottom: 20px;
     color: ${({theme}) => theme.textColor};
 `;
@@ -23,11 +23,11 @@ export const ProjectMain = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: ${({theme}) => theme.textColor};
 
     p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: ${({theme}) => theme.textColor};
         margin-top: 10px;
     }
@@ -74,14 +74,14 @@ export const Social = styled.div`
 
 export const SocialLink = styled.a`
     display: flex;
-    width: 200px;
+    width: 150px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 15px 30px;
+    padding: 15px 25px;
     color: ${({theme}) => theme.textColor};
     border-radius: 40px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     transition: background-color 0.3s, color 0.3s, border 0.3s ease-in-out;
     border: 1px solid ${({theme}) => theme.textColor};
 
@@ -106,7 +106,7 @@ export const ProjectSummary = styled.div`
     text-align: left;
 
     p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: ${({theme}) => theme.textColor};
         margin-top: 0;
         margin-bottom: 10px;
@@ -123,7 +123,7 @@ export const ProjectSummary = styled.div`
     }
 
     li {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         line-height: 1.8;
         margin-bottom: 8px;
         color: ${({theme}) => theme.textColor};
@@ -144,7 +144,7 @@ export const Section = styled.div`
     text-align: center;
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 20px;
         color: ${({theme}) => theme.textColor};
         position: relative;
@@ -163,7 +163,7 @@ export const Section = styled.div`
     }
 
     p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         line-height: 1.8;
         color: ${({theme}) => theme.textColor};
         text-align: center;
@@ -184,13 +184,13 @@ export const TechnologyItem = styled.div`
     display: flex;
     flex: 1 1 30%;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: ${({theme}) => theme.textColor};
     justify-content: center;
 
     svg {
         margin-right: 10px;
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 `;
 
@@ -218,7 +218,7 @@ export const ContentCategory = styled.div`
     background-color: ${({theme}) => theme.skillGridColor};
 
     h3 {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
         margin-bottom: 15px;
         color: ${({theme}) => theme.textColor};
     }
@@ -270,7 +270,7 @@ export const VideoContainer = styled.div`
     align-items: center;
 
     h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-bottom: 15px;
     }
 `;
@@ -297,7 +297,7 @@ export const ImageGallery = styled.div`
     }
 
     h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-bottom: -50px;
     }
 `;
