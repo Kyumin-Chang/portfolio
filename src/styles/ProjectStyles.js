@@ -51,16 +51,16 @@ export const SlideImg = styled.div`
     background-image: url(${props => props.bgImage});
     background-size: cover;
     background-repeat: repeat-x;
-    animation: slide-right 60s linear infinite;
+    animation: slide-left 60s linear infinite;
     opacity: 0.2;
     z-index: 1;
 
-    @keyframes slide-right {
+    @keyframes slide-left {
         from {
-            background-position: 0 0;
+            background-position: 5000px 0;
         }
         to {
-            background-position: 5000px 0;
+            background-position: 0 0;
         }
     }
 `;
