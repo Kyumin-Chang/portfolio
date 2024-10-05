@@ -78,10 +78,10 @@ const Project1 = () => {
                 <ProjectContainer>
                     <ProjectMain>
                         <ProjectSlide>
-                            <SlideImg/>
+                            <SlideImg bgImage="/chatEATslide.png"/>
                             <MainContent>
                                 <ProjectTitle>ChatEAT</ProjectTitle>
-                                <h2>맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇 </h2>
+                                <h2>맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇</h2>
                                 <p>ChatEAT은 사용자에게 판교 주변 맛집을 랜덤으로 추천하고, 추가로 교통 정보와 날씨 정보를 제공하는 챗봇 서비스입니다.</p>
                                 <Social>
                                     <SocialLink href="https://github.com/orgs/kakaotechbootcamp-team13/repositories"
@@ -236,6 +236,60 @@ const Project1 = () => {
                                 </ContentCategory>
                             </ProjectContentGrid>
                         </Section>
+                        <Section id="troubleshooting">
+                            <h2>트러블 슈팅</h2>
+                            <ProjectContentGrid>
+                                <ContentCategory>
+                                    <h3>Frontend</h3>
+                                    <ul>
+                                        <li>
+                                            초기에는 Access Token과 Refresh Token을 모두 LocalStorage에 저장하여 관리했으나, XSS 공격에 노출될
+                                            가능성이 있어 보안상의 취약점이 우려됨
+                                        </li>
+                                        <ul>
+                                            <li>보안성을 강화하기 위해 Access Token은 LocalStorage에서 유지하되, Refresh Token은 HTTP-Only
+                                                쿠키로 전달하여 클라이언트 측 스크립트에서 접근하지 못하도록 개선
+                                            </li>
+                                        </ul>
+                                        <li>다양한 브라우저 환경에서 UI 요소가 일관성 있게 렌더링되지 않음. 특히 CSS Flexbox나 Grid 레이아웃이 브라우저별로 상이하게
+                                            작동하여 레이아웃이 깨지는 현상 발생
+                                        </li>
+                                        <ul>
+                                            <li>CSS 브라우저 호환성 문제를 해결하기 위해 Autoprefixer와 같은 도구를 사용하여 CSS에 필요한 브라우저 벤더
+                                                프리픽스를 자동으로 추가하고, 크로스 브라우저 테스트를 통해 레이아웃 일관성을 확보
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </ContentCategory>
+                                <ContentCategory>
+                                    <h3>Backend</h3>
+                                    <ul>
+                                        <li>일반 회원가입과 OAuth 2.0 로그인을 구현할 때 각각 UserDetails와 OAuth2User 객체가 반환되어, 로그인 방식에
+                                            따라 서로 다른 객체를 처리해야 하는 복잡성이 발생. 이를 일관되게 처리하는 데 어려움이 있었음
+                                        </li>
+                                        <ul>
+                                            <li>UserDetails와 OAuth2User의 반환 객체를 통합하기 위해 PrincipalDetails 클래스를 만들어 두 방식에서
+                                                반환되는 인증 객체를 하나로 처리. 이를 통해 인증 로직의 복잡성을 줄이고 다양한 로그인 방식에 대해 일관된 처리 구조를 구축
+                                            </li>
+                                        </ul>
+                                        <li>Access Token이 로그아웃 후에도 일정 시간 동안 유효하여 보안 취약점이 발생할 수 있었음</li>
+                                        <ul>
+                                            <li>로그아웃 시 Access Token을 Redis에 저장하고, 만료 시간을 1시간으로 설정하여 해당 시간 내에 로그아웃한 사용자는
+                                                동일한 토큰을 재사용할 수 없도록 구현. 이를 통해 로그아웃 이후의 보안성을 강화함
+                                            </li>
+                                        </ul>
+                                        <li>Refresh Token을 보안 목적으로 서버 내에서 AES-128로 암호화하여 전달했으나, OAuth 로그인 과정에서 URL
+                                            redirect 시 URL-safe encoding을 적용하지 않아 오류 발생. 암호화된 토큰이 안전하게 URL로 전달되지 않음
+                                        </li>
+                                        <ul>
+                                            <li>URL-safe encoding을 적용하여 Refresh Token이 안전하게 URL을 통해 전달될 수 있도록 수정. 이를 통해
+                                                OAuth 로그인 과정에서 발생하던 오류를 해결하고 보안성을 유지
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                </ContentCategory>
+                            </ProjectContentGrid>
+                        </Section>
                         <Section id="implementation">
                             <h2>프로젝트 시연 영상 및 이미지</h2>
                             <VideoContainer>
@@ -251,46 +305,55 @@ const Project1 = () => {
                                 <ProjectImage
                                     src="/chatEAThome.png"
                                     alt="ChatEAT Implementation Image 1"
+                                    width="100%"
                                 />
                                 <p>회원가입 화면입니다. 이메일과 닉네임을 입력하면 자동으로 중복 검사를 수행합니다.</p>
                                 <ProjectImage
                                     src="/chatEATregister.png"
                                     alt="ChatEAT Implementation Image 2"
+                                    width="100%"
                                 />
                                 <p>로그인 화면입니다.</p>
                                 <ProjectImage
                                     src="/chatEATlogin.png"
                                     alt="ChatEAT Implementation Image 3"
+                                    width="100%"
                                 />
                                 <p>로그인 후 홈 화면입니다.</p>
                                 <ProjectImage
                                     src="/chatEAThomelogin.png"
                                     alt="ChatEAT Implementation Image 4"
+                                    width="100%"
                                 />
                                 <p>회원 정보 화면입니다.</p>
                                 <ProjectImage
                                     src="/chatEATinfo.png"
                                     alt="ChatEAT Implementation Image 5"
+                                    width="100%"
                                 />
                                 <p>회원 정보 수정 화면입니다.</p>
                                 <ProjectImage
                                     src="/chatEATedit.png"
                                     alt="ChatEAT Implementation Image 6"
+                                    width="100%"
                                 />
                                 <p>아바타 수정 화면입니다.</p>
                                 <ProjectImage
                                     src="/chatEATavatar.png"
                                     alt="ChatEAT Implementation Image 7"
+                                    width="100%"
                                 />
                                 <p>채팅 화면입니다. 채팅을 보내면 AI 서버와 통신하여 응답을 받아옵니다.</p>
                                 <ProjectImage
                                     src="/chatEATchat.png"
                                     alt="ChatEAT Implementation Image 8"
+                                    width="100%"
                                 />
                                 <p>좋아요 화면입니다.</p>
                                 <ProjectImage
                                     src="/chatEATlike.png"
                                     alt="ChatEAT Implementation Image 9"
+                                    width="100%"
                                 />
                             </ImageGallery>
                         </Section>

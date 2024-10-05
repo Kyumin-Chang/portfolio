@@ -48,7 +48,7 @@ export const SlideImg = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("/chatEATslide.png");
+    background-image: url(${props => props.bgImage});
     background-size: cover;
     background-repeat: repeat-x;
     animation: slide-right 60s linear infinite;
@@ -291,7 +291,7 @@ export const ImageGallery = styled.div`
     margin-top: 30px;
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-top: 80px;
         margin-bottom: 10px;
     }
@@ -303,8 +303,7 @@ export const ImageGallery = styled.div`
 `;
 
 export const ProjectImage = styled.img`
-    width: 100%;
+    width: ${props => props.width};
     max-width: 900px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;

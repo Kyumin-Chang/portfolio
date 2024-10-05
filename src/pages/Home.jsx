@@ -50,7 +50,6 @@ import {
     SiFigma,
     SiGithubactions,
     SiJira,
-    SiLinkedin,
     SiMongodb,
     SiMysql,
     SiNextdotjs,
@@ -103,24 +102,24 @@ const projects = [
         description: '맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇',
         image: '/project1.png',
     },
-    {
-        id: 2,
-        title: 'Orli Climbing',
-        description: '주변 클라이밍 센터에 대한 정보 제공 서비스',
-        image: '/project2.png',
-    },
+    // {
+    //     id: 2,
+    //     title: 'Orli Climbing',
+    //     description: '주변 클라이밍 센터에 대한 정보 제공 서비스',
+    //     image: '/project2.png',
+    // },
     {
         id: 3,
         title: 'Golang',
         description: '갈등 완화/커뮤니케이션 상승 채팅 웹 서비스',
         image: '/project3.png',
     },
-    {
-        id: 4,
-        title: 'Daily Nest',
-        description: '나만의 일상을 기록하는 공간 웹 서비스',
-        image: '/project4.png',
-    },
+    // {
+    //     id: 4,
+    //     title: 'Daily Nest',
+    //     description: '나만의 일상을 기록하는 공간 웹 서비스',
+    //     image: '/project4.png',
+    // },
     {
         id: 5,
         title: 'Portfolio',
@@ -177,8 +176,8 @@ const Home = () => {
                     <SocialLinks>
                         <SocialButton href="https://github.com/Kyumin-Chang"
                                       target="_blank"><FaGithub/> Github</SocialButton>
-                        <SocialButton href="https://kr.linkedin.com/"
-                                      target="_blank"><SiLinkedin/> LinkedIn</SocialButton>
+                        {/*<SocialButton href="https://kr.linkedin.com/"*/}
+                        {/*              target="_blank"><SiLinkedin/> LinkedIn</SocialButton>*/}
                         <SocialButton href="https://velog.io/@lord/posts"
                                       target="_blank"><SiVelog/> Velog</SocialButton>
                     </SocialLinks>
