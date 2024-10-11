@@ -42,6 +42,7 @@ const lightTheme = {
     cardBackgroundColor: 'rgba(255,255,255,0.77)',
     buttonColor: '#5a5a5a',
     reverseButtonColor: '#ffffff',
+    imageBorderColor: '#dadada',
 };
 
 const darkTheme = {
@@ -57,15 +58,20 @@ const darkTheme = {
     cardBackgroundColor: 'rgba(0,0,0,0.61)',
     buttonColor: '#fff',
     reverseButtonColor: '#4e4c4c',
+    imageBorderColor: '#3c3c3c',
 };
 
 const Project1 = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const storedTheme = localStorage.getItem('isDarkMode');
+        return storedTheme ? JSON.parse(storedTheme) : true;
+    });
     const theme = isDarkMode ? darkTheme : lightTheme;
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+    }, [isDarkMode]);
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
@@ -293,7 +299,7 @@ const Project1 = () => {
                         <Section id="implementation">
                             <h2>프로젝트 시연 영상 및 이미지</h2>
                             <VideoContainer>
-                                <h3> 프로젝트 시연 영상 </h3>
+                                <h3>프로젝트 시연 영상</h3>
                                 <ProjectVideo controls>
                                     <source src="/chateatImpl.mp4" type="video/mp4"/>
                                     브라우저가 동영상을 지원하지 않습니다.
@@ -301,60 +307,32 @@ const Project1 = () => {
                             </VideoContainer>
                             <ImageGallery>
                                 <h3>프로젝트 시연 이미지</h3>
-                                <p>홈 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEAThome.png"
-                                    alt="ChatEAT Implementation Image 1"
-                                    width="100%"
-                                />
-                                <p>회원가입 화면입니다. 이메일과 닉네임을 입력하면 자동으로 중복 검사를 수행합니다.</p>
-                                <ProjectImage
-                                    src="/chatEATregister.png"
-                                    alt="ChatEAT Implementation Image 2"
-                                    width="100%"
-                                />
-                                <p>로그인 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEATlogin.png"
-                                    alt="ChatEAT Implementation Image 3"
-                                    width="100%"
-                                />
-                                <p>로그인 후 홈 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEAThomelogin.png"
-                                    alt="ChatEAT Implementation Image 4"
-                                    width="100%"
-                                />
-                                <p>회원 정보 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEATinfo.png"
-                                    alt="ChatEAT Implementation Image 5"
-                                    width="100%"
-                                />
-                                <p>회원 정보 수정 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEATedit.png"
-                                    alt="ChatEAT Implementation Image 6"
-                                    width="100%"
-                                />
-                                <p>아바타 수정 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEATavatar.png"
-                                    alt="ChatEAT Implementation Image 7"
-                                    width="100%"
-                                />
-                                <p>채팅 화면입니다. 채팅을 보내면 AI 서버와 통신하여 응답을 받아옵니다.</p>
-                                <ProjectImage
-                                    src="/chatEATchat.png"
-                                    alt="ChatEAT Implementation Image 8"
-                                    width="100%"
-                                />
-                                <p>좋아요 화면입니다.</p>
-                                <ProjectImage
-                                    src="/chatEATlike.png"
-                                    alt="ChatEAT Implementation Image 9"
-                                    width="100%"
-                                />
+                                {[
+                                    {src: '/chatEAThome.png', description: '홈 화면입니다.'},
+                                    {
+                                        src: '/chatEATregister.png',
+                                        description: '<span class="image-title">회원가입 화면입니다.</span>이메일과 닉네임을 입력하면 자동으로 중복 검사를 수행합니다.'
+                                    },
+                                    {src: '/chatEATlogin.png', description: '로그인 화면입니다.'},
+                                    {src: '/chatEAThomelogin.png', description: '로그인 후 홈 화면입니다.'},
+                                    {src: '/chatEATinfo.png', description: '회원 정보 화면입니다.'},
+                                    {src: '/chatEATedit.png', description: '회원 정보 수정 화면입니다.'},
+                                    {src: '/chatEATavatar.png', description: '아바타 수정 화면입니다.'},
+                                    {
+                                        src: '/chatEATchat.png',
+                                        description: '<span class="image-title">채팅 화면입니다.</span>채팅을 보내면 AI 서버와 통신하여 응답을 받아옵니다.'
+                                    },
+                                    {src: '/chatEATlike.png', description: '좋아요 화면입니다.'},
+                                ].map((item, index) => (
+                                    <div key={index} className="image-wrapper">
+                                        <p dangerouslySetInnerHTML={{__html: item.description}}></p>
+                                        <ProjectImage
+                                            src={item.src}
+                                            alt={`ChatEAT Implementation Image ${index + 1}`}
+                                            width="100%"
+                                        />
+                                    </div>
+                                ))}
                             </ImageGallery>
                         </Section>
                     </ProjectDetails>

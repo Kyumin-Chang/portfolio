@@ -40,6 +40,10 @@ const ScrollButton = styled.button`
         background-color: ${({theme}) => theme.textColor};
         color: ${({theme}) => theme.reverseTextColor};
     }
+
+    @media (max-width: 860px) {
+        display: none;
+    }
 `;
 
 export default ScrollToTopButton;

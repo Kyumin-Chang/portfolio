@@ -4,6 +4,10 @@ export const PageWrapper = styled.div`
     background-color: ${({theme}) => theme.primaryBackground};
     color: ${({theme}) => theme.textColor};
     transition: all 0.3s ease;
+
+    @media (max-width: 860px) {
+        padding: 10px 0;
+    }
 `;
 
 export const MainSection = styled.section`
@@ -12,6 +16,11 @@ export const MainSection = styled.section`
     padding: 80px 60px;
     text-align: center;
     transition: all 0.3s ease;
+
+    @media (max-width: 860px) {
+        padding: 40px 20px;
+        flex-direction: column;
+    }
 `;
 
 export const UpperSection = styled.div`
@@ -19,6 +28,11 @@ export const UpperSection = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 50px 20px 60px;
+
+    @media (max-width: 860px) {
+        flex-direction: column;
+        margin: 20px 0;
+    }
 `;
 
 export const LowerSection = styled.div`
@@ -28,6 +42,12 @@ export const LowerSection = styled.div`
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 70px;
+
+    @media (max-width: 860px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 `;
 
 export const LeftContent = styled.div`
@@ -40,12 +60,25 @@ export const LeftContent = styled.div`
         font-weight: 400;
         font-style: italic;
         color: ${({theme}) => theme.textColor};
+
+        @media (max-width: 1120px) {
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 860px) {
+            font-size: 1.1rem;
+            text-align: center;
+        }
     }
 `;
 
 export const RightContent = styled.div`
     flex: 1;
     text-align: right;
+
+    @media (max-width: 860px) {
+        text-align: center;
+    }
 `;
 
 export const SplitTextLine = styled.div`
@@ -56,6 +89,14 @@ export const SplitTextLine = styled.div`
     font-size: 10rem;
     line-height: 1;
     color: ${({theme}) => theme.primaryTextColor};
+
+    @media (max-width: 1120px) {
+        font-size: 6.5rem;
+    }
+
+    @media (max-width: 860px) {
+        font-size: 4rem;
+    }
 `;
 
 export const StyledButton = styled.button`
@@ -104,6 +145,15 @@ export const StyledButton = styled.button`
     &:hover span {
         transform: scale(1.2);
     }
+
+    @media (max-width: 1120px) {
+        padding: 20px 60px;
+        font-size: 15px;
+    }
+
+    @media (max-width: 860px) {
+        display: none;
+    }
 `;
 
 export const SocialLinks = styled.div`
@@ -111,6 +161,11 @@ export const SocialLinks = styled.div`
     justify-content: center;
     gap: 50px;
     margin-top: 100px;
+
+    @media (max-width: 860px) {
+        gap: 30px;
+        margin-top: 50px;
+    }
 `;
 
 export const SocialButton = styled.a`
@@ -132,6 +187,15 @@ export const SocialButton = styled.a`
 
     svg {
         font-size: 1.6rem;
+
+        @media (max-width: 860px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 860px) {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 `;
 
@@ -156,6 +220,11 @@ export const Section = styled.section`
             left: 0;
             transform: translateX(0%);
         }
+
+        @media (max-width: 860px) {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
     }
 
     p {
@@ -165,6 +234,14 @@ export const Section = styled.section`
         text-align: center;
         max-width: 800px;
         margin: 10px auto;
+
+        @media (max-width: 860px) {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 860px) {
+        padding: 30px 40px;
     }
 `;
 
@@ -199,6 +276,11 @@ export const SliderContainer = styled.div`
         display: flex;
         align-items: center;
     }
+
+    @media (max-width: 860px) {
+        max-width: 100%;
+        padding: 0 10px;
+    }
 `;
 
 export const Card = styled.div`
@@ -212,6 +294,16 @@ export const Card = styled.div`
     justify-content: flex-end;
     align-items: center;
     overflow: hidden;
+
+    @media (max-width: 860px) {
+        width: 350px !important;
+        height: 220px !important;
+    }
+
+    @media (max-width: 700px) {
+        width: 250px !important;
+        height: 150px !important;
+    }
 `;
 
 export const CardContent = styled.div`
@@ -228,6 +320,20 @@ export const CardContent = styled.div`
         margin-left: 40px;
         color: ${({theme}) => theme.textColor};
         text-align: left;
+
+        @media (max-width: 860px) {
+            font-size: 1.8rem;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 700px) {
+            font-size: 1.6rem;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
     }
 
     p {
@@ -237,6 +343,28 @@ export const CardContent = styled.div`
         margin-left: 40px;
         color: ${({theme}) => theme.textColor};
         text-align: left;
+
+        @media (max-width: 860px) {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 700px) {
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+    }
+
+    @media (max-width: 860px) {
+        width: 220px;
+        height: 220px;
+    }
+
+    @media (max-width: 700px) {
+        width: 180px;
+        height: 180px;
     }
 
 `;
@@ -262,6 +390,18 @@ export const ReadMoreButton = styled.button`
         background-color: ${({theme}) => theme.reverseButtonColor};
         color: ${({theme}) => theme.textColor};;
     }
+
+    @media (max-width: 860px) {
+        padding: 12px 25px;
+        margin-left: 5px;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 700px) {
+        padding: 8px 15px;
+        margin-left: 5px;
+        font-size: 0.8rem;
+    }
 `;
 
 export const ReadMoreArrowButton = styled.button`
@@ -278,6 +418,10 @@ export const ReadMoreArrowButton = styled.button`
     &:hover {
         background-color: ${({theme}) => theme.reverseButtonColor};
         color: ${({theme}) => theme.textColor};;
+    }
+
+    @media (max-width: 860px) {
+        display: none;
     }
 `;
 
@@ -301,6 +445,10 @@ export const AboutMeCategory = styled.div`
         font-size: 1.6rem;
         margin-bottom: 15px;
         color: ${({theme}) => theme.textColor};
+
+        @media (max-width: 860px) {
+            font-size: 1.4rem;
+        }
     }
 
     p {
@@ -308,6 +456,13 @@ export const AboutMeCategory = styled.div`
         color: ${({theme}) => theme.textColor};
         text-align: left;
         width: 60%;
+        @media (max-width: 860px) {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 860px) {
+        padding: 10px;
     }
 `;
 
@@ -321,6 +476,13 @@ export const EducationList = styled.div`
         margin-top: 10px;
         margin-bottom: 10px;
         width: 90px;
+        @media (max-width: 860px) {
+            width: 60px;
+        }
+    }
+
+    @media (max-width: 860px) {
+        gap: 15px;
     }
 `;
 
@@ -336,6 +498,13 @@ export const EducationInfo = styled.div`
         text-align: left;
         color: ${({theme}) => theme.textColor};
         width: 100%;
+        @media (max-width: 860px) {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 860px) {
+        font-size: 1.1rem;
     }
 `;
 
@@ -345,6 +514,10 @@ export const SkillsGrid = styled.div`
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
+
+    @media (max-width: 860px) {
+        gap: 30px;
+    }
 `;
 
 export const SkillCategory = styled.div`
@@ -360,6 +533,10 @@ export const SkillCategory = styled.div`
         font-size: 1.6rem;
         margin-bottom: 15px;
         color: ${({theme}) => theme.textColor};
+
+        @media (max-width: 860px) {
+            font-size: 1.4rem;
+        }
     }
 `;
 
@@ -382,6 +559,13 @@ export const SkillItem = styled.div`
     .skill-icon {
         margin-right: 10px;
         font-size: 2rem;
+        @media (max-width: 860px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 860px) {
+        font-size: 1.1rem;
     }
 `;
 
@@ -399,6 +583,13 @@ export const Arrow = styled.div`
     z-index: 2;
     font-size: 50px;
     line-height: 60px;
+
+    @media (max-width: 860px) {
+        width: 100px;
+        height: 150px;
+        font-size: 25px;
+        line-height: 30px;
+    }
 `;
 
 export const PrevArrow = styled(Arrow)`
@@ -429,10 +620,17 @@ export const ContactItem = styled.div`
     .contact-icon {
         font-size: 2rem;
         color: ${({theme}) => theme.linkHoverColor};
+
+        @media (max-width: 860px) {
+            font-size: 1.5rem;
+        }
     }
 
     span {
         font-size: 1.4rem;
         color: ${({theme}) => theme.textColor};
+        @media (max-width: 860px) {
+            font-size: 1.1rem;
+        }
     }
 `;

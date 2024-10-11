@@ -58,12 +58,16 @@ const darkTheme = {
 };
 
 const Project3 = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const storedTheme = localStorage.getItem('isDarkMode');
+        return storedTheme ? JSON.parse(storedTheme) : true;
+    });
     const theme = isDarkMode ? darkTheme : lightTheme;
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+    }, [isDarkMode]);
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
@@ -225,41 +229,42 @@ const Project3 = () => {
                         <Section id="implementation">
                             <h2>프로젝트 시연 이미지</h2>
                             <ImageGallery>
-                                <p>홈 화면입니다.<br/>많은 사용자들이 채팅을 모바일로 많이 하기 때문에 모바일 웹으로 개발하였습니다.</p>
-                                <ProjectImage
-                                    src="/golangHome.png"
-                                    alt="Golang Implementation Image 1"
-                                    width="50%"
-                                />
-                                <p>채팅 대상 선택 화면입니다.<br/>사용자는 사람과 채팅할 지, AI(가상인물)과 채팅할 지 선택할 수 있습니다.</p>
-                                <ProjectImage
-                                    src="/golangChoice.png"
-                                    alt="Golang Implementation Image 2"
-                                    width="50%"
-                                />
-                                <p>자료 업로드 및 사용자 초대 화면입니다. <br/>사용자는 자신의 갈등상황에 대한 근거 자료를 업로드하여 AI가 대화 맥락을 이해하는데 도움을 줄 수
-                                    있습니다. 채팅방 코드 보내기를 통해 상대방을 자신의 채팅방에 초대하여 채팅을 시작할 수 있습니다.</p>
-                                <ProjectImage
-                                    src="/golangInvite.png"
-                                    alt="Golang Implementation Image 3"
-                                    width="50%"
-                                />
-                                <p>채팅 화면입니다.<br/>사용자는 자신이 하고 싶은 채팅을 입력하고 순화하기 또는 정리하기 기능을 사용할 수 있습니다. 순화하기의 경우 채팅 내용을
-                                    AI가 순화하여 3가지의 다른 문장을 추천해주고, 정리하기의 경우 채팅 내용이 길 경우 AI가 요약해서 채팅을 수정해줍니다.</p>
-                                <ProjectImage
-                                    src="/golangChat.png"
-                                    alt="Golang Implementation Image 4"
-                                    width="50%"
-                                />
-                                <p>채팅 결과 화면입니다.<br/>사용자는 채팅 끝내기 버튼을 누르면 해당 채팅방에서 자주 사용한 단어의 빈도수를 단어 구름 형태로 확인할 수 있습니다.
-                                    또한, 이전 채팅에 비해서 긍정적인 단어를 사용한 빈도수를 확인해서 점수로 보여줍니다. 마이페이지에서는 이전 채팅 대화에 대한 내역을 모두 확인할 수
-                                    있고,일주일간 변화된 긍정 점수에 대한 그래프를 확인할 수 있습니다.
-                                </p>
-                                <ProjectImage
-                                    src="/golangResult.png"
-                                    alt="Golang Implementation Image 5"
-                                    width="50%"
-                                />
+                                {[
+                                    {
+                                        description: '<span class="image-title">홈 화면입니다.</span><br/>많은 사용자들이 채팅을 모바일로 많이 하기 때문에 모바일 웹으로 개발하였습니다.',
+                                        src: '/golangHome.png',
+                                        alt: 'Golang Implementation Image 1'
+                                    },
+                                    {
+                                        description: '<span class="image-title">채팅 대상 선택 화면입니다.</span><br/>사용자는 사람과 채팅할 지, AI(가상인물)과 채팅할 지 선택할 수 있습니다.',
+                                        src: '/golangChoice.png',
+                                        alt: 'Golang Implementation Image 2'
+                                    },
+                                    {
+                                        description: '<span class="image-title">자료 업로드 및 사용자 초대 화면입니다.</span><br/>사용자는 자신의 갈등상황에 대한 근거 자료를 업로드하여 AI가 대화 맥락을 이해하는데 도움을 줄 수 있습니다. 채팅방 코드 보내기를 통해 상대방을 자신의 채팅방에 초대하여 채팅을 시작할 수 있습니다.',
+                                        src: '/golangInvite.png',
+                                        alt: 'Golang Implementation Image 3'
+                                    },
+                                    {
+                                        description: '<span class="image-title">채팅 화면입니다.</span><br/>사용자는 자신이 하고 싶은 채팅을 입력하고 순화하기 또는 정리하기 기능을 사용할 수 있습니다. 순화하기의 경우 채팅 내용을 AI가 순화하여 3가지의 다른 문장을 추천해주고, 정리하기의 경우 채팅 내용이 길 경우 AI가 요약해서 채팅을 수정해줍니다.',
+                                        src: '/golangChat.png',
+                                        alt: 'Golang Implementation Image 4'
+                                    },
+                                    {
+                                        description: '<span class="image-title">채팅 결과 화면입니다.</span><br/>사용자는 채팅 끝내기 버튼을 누르면 해당 채팅방에서 자주 사용한 단어의 빈도수를 단어 구름 형태로 확인할 수 있습니다. 또한, 이전 채팅에 비해서 긍정적인 단어를 사용한 빈도수를 확인해서 점수로 보여줍니다. 마이페이지에서는 이전 채팅 대화에 대한 내역을 모두 확인할 수 있고, 일주일간 변화된 긍정 점수에 대한 그래프를 확인할 수 있습니다.',
+                                        src: '/golangResult.png',
+                                        alt: 'Golang Implementation Image 5'
+                                    }
+                                ].map((item, index) => (
+                                    <div key={index} className="image-wrapper">
+                                        <p dangerouslySetInnerHTML={{__html: item.description}}></p>
+                                        <ProjectImage
+                                            src={item.src}
+                                            alt={item.alt}
+                                            width="70%"
+                                        />
+                                    </div>
+                                ))}
                             </ImageGallery>
                         </Section>
                     </ProjectDetails>

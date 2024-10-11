@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ThemeProvider} from 'styled-components';
 import Slider from "react-slick";
 import Header from '../components/Header';
@@ -123,15 +123,22 @@ const projects = [
     {
         id: 5,
         title: 'Portfolio',
-        description: '포트폴리오 웹사이트 제작하기',
+        description: '포트폴리오 웹사이트 제작',
         image: '/project5.png',
     }
 ];
 
 const Home = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const storedTheme = localStorage.getItem('isDarkMode');
+        return storedTheme ? JSON.parse(storedTheme) : true;
+    });
     const theme = isDarkMode ? darkTheme : lightTheme;
 
+    useEffect(() => {
+        localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+    }, [isDarkMode]);
+    
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
     };
@@ -147,6 +154,74 @@ const Home = () => {
         centerPadding: "450px",
         prevArrow: <CustomPrevArrow/>,
         nextArrow: <CustomNextArrow/>,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    centerPadding: "350px",
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    centerPadding: "280px",
+                },
+            },
+            {
+                breakpoint: 1070,
+                settings: {
+                    centerPadding: "200px",
+                },
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    centerPadding: "150px",
+                },
+            },
+            {
+                breakpoint: 860,
+                settings: {
+                    centerPadding: "200px",
+                },
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    centerPadding: "150px",
+                },
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    centerPadding: "100px",
+                },
+            },
+            {
+                breakpoint: 590,
+                settings: {
+                    centerPadding: "100px",
+                },
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    centerPadding: "60px",
+                },
+            },
+            {
+                breakpoint: 410,
+                settings: {
+                    centerPadding: "40px",
+                },
+            },
+            {
+                breakpoint: 370,
+                settings: {
+                    centerPadding: "10px",
+                },
+            },
+        ],
     };
 
     return (

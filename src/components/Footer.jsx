@@ -15,4 +15,9 @@ const FooterWrapper = styled.footer`
     text-align: center;
     padding: 80px;
     transition: background-color 0.3s ease, color 0.3s ease;
+
+    @media (max-width: 860px) {
+        padding: 40px;
+        font-size: 0.8rem;
+    }
 `;
