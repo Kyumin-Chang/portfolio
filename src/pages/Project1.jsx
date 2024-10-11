@@ -70,6 +70,9 @@ const Project1 = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
     }, [isDarkMode]);
 
