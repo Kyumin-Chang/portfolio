@@ -381,6 +381,7 @@ export const ImageGallery = styled.div`
 
             @media (max-width: 860px) {
                 font-size: 1rem;
+                max-width: 90%;
             }
         }
 
@@ -388,6 +389,10 @@ export const ImageGallery = styled.div`
             text-align: center;
             display: block;
             margin: 0;
+        }
+
+        @media (max-width: 860px) {
+            width: 110%;
         }
     }
 `;

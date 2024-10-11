@@ -63,9 +63,9 @@ const Project5 = () => {
     });
     const theme = isDarkMode ? darkTheme : lightTheme;
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, []);
 
     useEffect(() => {
         localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
