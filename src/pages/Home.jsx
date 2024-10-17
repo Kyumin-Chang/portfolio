@@ -43,18 +43,18 @@ import {
     FaHtml5,
     FaJava,
     FaJsSquare,
-    FaNodeJs,
     FaReact
 } from 'react-icons/fa';
 import {
     SiFigma,
     SiGithubactions,
     SiJira,
+    SiMariadb,
     SiMongodb,
     SiMysql,
-    SiNextdotjs,
     SiNotion,
     SiRedis,
+    SiSlack,
     SiSpring,
     SiSpringsecurity,
     SiTypescript,
@@ -138,7 +138,7 @@ const Home = () => {
     useEffect(() => {
         localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
     }, [isDarkMode]);
-    
+
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
     };
@@ -318,9 +318,6 @@ const Home = () => {
                                 <SkillItem>
                                     <SiTypescript className="skill-icon" color={"#3178C6"}/> TypeScript
                                 </SkillItem>
-                                <SkillItem>
-                                    <SiNextdotjs className="skill-icon" color={"#000000"}/> Next.js
-                                </SkillItem>
                             </SkillList>
                         </SkillCategory>
                         <SkillCategory>
@@ -335,12 +332,6 @@ const Home = () => {
                                 <SkillItem>
                                     <SiSpringsecurity className="skill-icon" color={"#6DB33F"}/> Spring Security
                                 </SkillItem>
-                                <SkillItem>
-                                    <FaNodeJs className="skill-icon" color={"#5FA04E"}/> Node.js
-                                </SkillItem>
-                                <SkillItem>
-                                    <SiNextdotjs className="skill-icon" color={"#000000"}/> Next.js
-                                </SkillItem>
                             </SkillList>
                         </SkillCategory>
                         <SkillCategory>
@@ -348,6 +339,9 @@ const Home = () => {
                             <SkillList>
                                 <SkillItem>
                                     <SiMysql className="skill-icon" color={"#4479A1"}/> MySQL
+                                </SkillItem>
+                                <SkillItem>
+                                    <SiMariadb className="skill-icon" color={"#003545"}/> MariaDB
                                 </SkillItem>
                                 <SkillItem>
                                     <SiMongodb className="skill-icon" color={"#47A248"}/> MongoDB
@@ -390,6 +384,9 @@ const Home = () => {
                             <SkillList>
                                 <SkillItem>
                                     <SiJira className="skill-icon" color={"#0052CC"}/> Jira
+                                </SkillItem>
+                                <SkillItem>
+                                    <SiSlack className="skill-icon" color={"#4A154B"}/> Slack
                                 </SkillItem>
                                 <SkillItem>
                                     <SiNotion className="skill-icon" color={"#000000"}/> Notion
