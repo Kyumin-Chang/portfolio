@@ -193,10 +193,6 @@ const Project3 = () => {
                                         <li>Let’s Encrypt 등의 SSL 인증서를 사용하여 HTTPS를 적용하였습니다. Nginx에서 SSL 인증서를 설정하고, 안전한
                                             통신을 위해 HTTP 요청을 HTTPS로 리디렉션하는 로직을 구현하였습니다.
                                         </li>
-                                        <li>
-                                            Nginx의 로드 밸런싱 기능을 활용하여 여러 백엔드 서버 인스턴스 간에 부하를 분산하였습니다. 이를 통해 대규모 트래픽을 처리할 때
-                                            성능 저하를 방지하고, 서버 다운 시에도 다른 인스턴스로 요청이 전달될 수 있도록 하였습니다.
-                                        </li>
                                     </ul>
                                 </ContentCategory>
                             </ProjectContentGrid>
