@@ -159,7 +159,7 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
-    font-size: 20px;
+    font-size: 22px;
 
     a {
         text-decoration: none;

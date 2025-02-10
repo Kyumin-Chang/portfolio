@@ -16,6 +16,7 @@ export const MainSection = styled.section`
     padding: 80px 60px;
     text-align: center;
     transition: all 0.3s ease;
+    user-select: none;
 
     @media (max-width: 860px) {
         padding: 40px 20px;
@@ -55,18 +56,22 @@ export const LeftContent = styled.div`
     text-align: left;
 
     p {
-        font-size: 1.5rem;
-        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        font-family: "NanumSquareRound", sans-serif;
         font-weight: 400;
         font-style: italic;
         color: ${({theme}) => theme.textColor};
 
-        @media (max-width: 1120px) {
-            font-size: 1.4rem;
+        @media (max-width: 1825px) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 1330px) {
+            font-size: 1.5rem;
         }
 
         @media (max-width: 860px) {
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             text-align: center;
         }
     }
@@ -90,7 +95,7 @@ export const SplitTextLine = styled.div`
     line-height: 1;
     color: ${({theme}) => theme.primaryTextColor};
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1330px) {
         font-size: 6.5rem;
     }
 
@@ -104,8 +109,8 @@ export const StyledButton = styled.button`
     color: ${({theme}) => theme.reverseTextColor};
     border: none;
     border-radius: 50px;
-    padding: 25px 100px;
-    font-size: 20px;
+    padding: 30px 120px;
+    font-size: 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -143,15 +148,15 @@ export const StyledButton = styled.button`
     }
 
     &:hover span {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
-    @media (max-width: 1120px) {
-        padding: 20px 60px;
-        font-size: 15px;
+    @media (max-width: 1330px) {
+        padding: 25px 100px;
+        font-size: 20px;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 940px) {
         display: none;
     }
 `;
@@ -172,10 +177,10 @@ export const SocialButton = styled.a`
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 15px 30px;
+    padding: 20px 60px;
     color: ${({theme}) => theme.textColor};
     border-radius: 40px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     position: relative;
     transition: background-color 0.3s, color 0.3s, border 0.3s ease-in-out;
     border: 1px solid ${({theme}) => theme.textColor};
@@ -186,16 +191,16 @@ export const SocialButton = styled.a`
     }
 
     svg {
-        font-size: 1.6rem;
+        font-size: 2rem;
 
         @media (max-width: 860px) {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
         }
     }
 
     @media (max-width: 860px) {
-        font-size: 1rem;
-        padding: 10px 20px;
+        font-size: 1.2rem;
+        padding: 15px 30px;
     }
 `;
 
@@ -228,12 +233,7 @@ export const Section = styled.section`
     }
 
     p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: ${({theme}) => theme.textColor};
-        text-align: center;
         max-width: 800px;
-        margin: 10px auto;
 
         @media (max-width: 860px) {
             font-size: 1rem;
@@ -241,7 +241,7 @@ export const Section = styled.section`
     }
 
     @media (max-width: 860px) {
-        padding: 30px 40px;
+        padding: 15px 20px;
     }
 `;
 
@@ -284,8 +284,8 @@ export const SliderContainer = styled.div`
 `;
 
 export const Card = styled.div`
-    width: 500px !important;
-    height: 300px !important;
+    width: 600px !important;
+    height: 350px !important;
     background-image: url(${({$image}) => $image});
     background-size: cover;
     background-position: center;
@@ -294,6 +294,7 @@ export const Card = styled.div`
     justify-content: flex-end;
     align-items: center;
     overflow: hidden;
+    user-select: none;
 
     @media (max-width: 860px) {
         width: 350px !important;
@@ -301,23 +302,24 @@ export const Card = styled.div`
     }
 
     @media (max-width: 700px) {
-        width: 250px !important;
-        height: 150px !important;
+        width: 300px !important;
+        height: 180px !important;
     }
 `;
 
 export const CardContent = styled.div`
     width: 300px;
-    height: 300px;
+    height: 350px;
     background-color: ${({theme}) => theme.cardBackgroundColor};
     padding: 20px;
     border-radius: 0 20px 20px 0;
 
     h3 {
-        font-size: 2rem;
+        font-size: 3rem;
+        font-family: NanumSquareRound, sans-serif;
         margin-top: 40px;
         margin-bottom: 15px;
-        margin-left: 40px;
+        margin-left: 30px;
         color: ${({theme}) => theme.textColor};
         text-align: left;
 
@@ -329,18 +331,18 @@ export const CardContent = styled.div`
         }
 
         @media (max-width: 700px) {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             margin-top: 10px;
-            margin-left: 5px;
+            margin-left: 0;
             margin-bottom: 0;
         }
     }
 
     p {
 
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-bottom: 20px;
-        margin-left: 40px;
+        margin-left: 30px;
         color: ${({theme}) => theme.textColor};
         text-align: left;
 
@@ -353,7 +355,7 @@ export const CardContent = styled.div`
         @media (max-width: 700px) {
             font-size: 0.8rem;
             margin-bottom: 5px;
-            margin-left: 5px;
+            margin-left: 0;
         }
     }
 
@@ -380,8 +382,8 @@ export const ReadMoreButton = styled.button`
     border: none;
     padding: 15px 30px;
     border-radius: 30px;
-    margin-left: 40px;
-    font-size: 1rem;
+    margin-left: 30px;
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -409,7 +411,7 @@ export const ReadMoreArrowButton = styled.button`
     color: ${({theme}) => theme.reverseTextColor};
     border: none;
     justify-content: center;
-    padding: 11px 14px;
+    padding: 11px 18px;
     border-radius: 30px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -427,93 +429,268 @@ export const ReadMoreArrowButton = styled.button`
 
 export const AboutMeGrid = styled.div`
     display: flex;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-`
-export const AboutMeCategory = styled.div`
-    width: 600px;
-    padding: 20px;
-    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
     border: 1px solid ${({theme}) => theme.borderColor};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     background-color: ${({theme}) => theme.skillGridColor};
 
-    h3 {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-        color: ${({theme}) => theme.textColor};
-
-        @media (max-width: 860px) {
-            font-size: 1.4rem;
-        }
-    }
-
-    p {
-        font-size: 1.4rem;
-        color: ${({theme}) => theme.textColor};
-        text-align: left;
-        width: 60%;
-        @media (max-width: 860px) {
-            font-size: 1.1rem;
-        }
-    }
-
     @media (max-width: 860px) {
+        padding: 20px;
+    }
+
+    @media (max-width: 430px) {
         padding: 10px;
     }
 `;
 
-export const EducationList = styled.div`
+export const AboutMeTopCategory = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+`;
 
-    img {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 90px;
-        @media (max-width: 860px) {
-            width: 60px;
+export const InfoBox = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid ${({theme}) => theme.borderColor};
+    background-color: ${({theme}) => theme.inboxColor};
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    p {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: ${({theme}) => theme.textColor};
+        margin: 8px 0;
+    }
+
+    @media (max-width: 1130px) {
+        p {
+            font-size: 1.5rem;
         }
     }
 
     @media (max-width: 860px) {
-        gap: 15px;
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 430px) {
+        padding: 20px;
+        p {
+            font-size: 1.2rem;
+        }
     }
 `;
 
-export const EducationInfo = styled.div`
+export const EducationBox = styled.div`
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    font-size: 1.4rem;
-    color: ${({theme}) => theme.textColor};
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid ${({theme}) => theme.borderColor};
+    background-color: ${({theme}) => theme.inboxColor};
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+`;
+
+export const EducationLogo = styled.img`
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+
+    @media (max-width: 1130px) {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media (max-width: 860px) {
+        width: 60px;
+        height: 60px;
+    }
+`;
+
+export const EducationDetails = styled.div`
+    text-align: left;
+
+    h3 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: ${({theme}) => theme.textColor};
+    }
 
     p {
-        margin: 0;
         font-size: 1.2rem;
-        text-align: left;
         color: ${({theme}) => theme.textColor};
-        width: 100%;
-        @media (max-width: 860px) {
-            font-size: 1rem;
+        margin: 2px 0;
+    }
+
+    @media (max-width: 1130px) {
+        h3 {
+            font-size: 1.4rem;
         }
     }
 
     @media (max-width: 860px) {
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 430px) {
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+`;
+
+export const AboutMeBottomBox = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+`;
+
+export const StrengthList = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 1200px;
+`;
+
+export const StrengthItem = styled.li`
+    font-size: 1.5rem;
+    color: ${({theme}) => theme.textColor};
+    background-color: ${({theme}) => theme.inboxColor};
+    border: 1px solid ${({theme}) => theme.borderColor};
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    line-height: 1.7;
+    overflow: hidden;
+
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+        background-color: ${({theme}) => theme.backgroundHoverColor};
+        transform: scale(1.02);
+    }
+
+    strong {
+        position: relative;
+        color: ${({theme}) => theme.textColor};
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    strong::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 3px;
+        background: ${({theme}) => theme.highlightColor};
+        transition: width 0.4s ease-in-out;
+    }
+
+    &:hover strong::after {
+        width: 100%;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 860px) {
+        font-size: 1.3rem;
+
+        strong {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 430px) {
         font-size: 1.1rem;
+
+        strong {
+            font-size: 1.2rem;
+        }
+    }
+`;
+
+export const SkillsContainer = styled.div`
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;;
+`;
+
+export const SkillLegend = styled.div`
+    position: absolute;
+    top: -70px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    color: ${({theme}) => theme.textColor};
+    padding: 20px 10px;
+    border-radius: 8px;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    div {
+        width: 40px;
+        height: 10px;
+        border-radius: 4px;
+    }
+
+    @media (max-width: 860px) {
+        top: -50px;
+        font-size: 1rem;
     }
 `;
 
 export const SkillsGrid = styled.div`
     display: flex;
-    margin-top: 20px;
     flex-wrap: wrap;
-    gap: 40px;
     justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
 
     @media (max-width: 860px) {
         gap: 30px;
@@ -521,7 +698,7 @@ export const SkillsGrid = styled.div`
 `;
 
 export const SkillCategory = styled.div`
-    width: 600px;
+    width: 630px;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid ${({theme}) => theme.borderColor};
@@ -541,31 +718,56 @@ export const SkillCategory = styled.div`
 `;
 
 export const SkillList = styled.div`
-    margin: auto 20px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
 `;
 
-export const SkillItem = styled.div`
+export const SkillBox = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 250px;
-    margin-bottom: 15px;
+    width: 200px;
+    padding: 15px;
     font-size: 1.4rem;
     color: ${({theme}) => theme.textColor};
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid ${({theme}) => theme.borderColor};
+    background-color: ${({theme}) => theme.inboxColor};
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     .skill-icon {
-        margin-right: 10px;
-        font-size: 2rem;
+        font-size: 3rem;
+        margin-bottom: 8px;
         @media (max-width: 860px) {
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
     }
 
     @media (max-width: 860px) {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 430px) {
+        width: 160px;
+    }
+`;
+
+export const ProgressBar = styled.div`
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: ${({theme}) => theme.borderColor};
+    margin-top: 10px;
+    overflow: hidden;
+
+    div {
+        height: 100%;
+        border-radius: 6px;
+        transition: width 0.4s ease-in-out;
+        background-color: ${({color}) => color};
     }
 `;
 
@@ -613,7 +815,6 @@ export const ContactDetails = styled.div`
 export const ContactItem = styled.div`
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
     color: ${({theme}) => theme.textColor};
     gap: 15px;
 
@@ -627,7 +828,7 @@ export const ContactItem = styled.div`
     }
 
     span {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         color: ${({theme}) => theme.textColor};
         @media (max-width: 860px) {
             font-size: 1.1rem;
