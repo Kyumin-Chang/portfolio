@@ -656,16 +656,16 @@ export const SkillsContainer = styled.div`
 `;
 
 export const SkillLegend = styled.div`
-    position: absolute;
-    top: -70px;
     right: 0;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     font-size: 1.2rem;
     color: ${({theme}) => theme.textColor};
-    padding: 20px 10px;
     border-radius: 8px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
     span {
         display: flex;
@@ -680,17 +680,28 @@ export const SkillLegend = styled.div`
     }
 
     @media (max-width: 860px) {
-        top: -50px;
         font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: -10px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 430px) {
+        font-size: 0.8rem;
+        width: 100%;
     }
 `;
+
 
 export const SkillsGrid = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    margin-top: 50px;
+    margin-top: 20px;
 
     @media (max-width: 860px) {
         gap: 30px;
@@ -751,7 +762,7 @@ export const SkillBox = styled.div`
     }
 
     @media (max-width: 430px) {
-        width: 160px;
+        width: 150px;
     }
 `;
 
