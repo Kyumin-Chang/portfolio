@@ -455,6 +455,10 @@ export const AboutMeTopCategory = styled.div`
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
+
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
 `;
 
 export const InfoBox = styled.div`
@@ -492,6 +496,13 @@ export const InfoBox = styled.div`
         padding: 20px;
         p {
             font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 390px) {
+        padding: 20px;
+        p {
+            font-size: 1.1rem;
         }
     }
 `;
@@ -564,6 +575,16 @@ export const EducationDetails = styled.div`
 
         p {
             font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 390px) {
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
         }
     }
 `;
@@ -646,6 +667,14 @@ export const StrengthItem = styled.li`
             font-size: 1.2rem;
         }
     }
+
+    @media (max-width: 390px) {
+        font-size: 0.9rem;
+
+        strong {
+            font-size: 1rem;
+        }
+    }
 `;
 
 export const SkillsContainer = styled.div`
@@ -725,6 +754,10 @@ export const SkillCategory = styled.div`
         @media (max-width: 860px) {
             font-size: 1.4rem;
         }
+
+        @media (max-width: 430px) {
+            font-size: 1.2rem;
+        }
     }
 `;
 
@@ -733,6 +766,10 @@ export const SkillList = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+
+    @media (max-width: 430px) {
+        gap: 5px;
+    }
 `;
 
 export const SkillBox = styled.div`
@@ -740,6 +777,7 @@ export const SkillBox = styled.div`
     flex-direction: column;
     align-items: center;
     width: 200px;
+    max-width: 100%;
     padding: 15px;
     font-size: 1.4rem;
     color: ${({theme}) => theme.textColor};
@@ -761,8 +799,20 @@ export const SkillBox = styled.div`
         font-size: 1.2rem;
     }
 
-    @media (max-width: 430px) {
-        width: 150px;
+    @media (max-width: 500px) {
+        width: 140px;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 370px) {
+        width: 105px;
+        font-size: 0.8rem;
+    }
+
+    @media (max-width: 300px) {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
     }
 `;
 
