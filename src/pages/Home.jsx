@@ -43,6 +43,7 @@ import {
 import {
     FaArrowRight,
     FaAws,
+    FaCloud,
     FaCss3Alt,
     FaDocker,
     FaEnvelope,
@@ -163,7 +164,7 @@ const skills = {
             level: "advanced"
         },
         {
-            icon: <SiSpring className="skill-icon" color={"#6DB33F"}/>,
+            icon: <FaCloud className="skill-icon" color={"#6DB33F"}/>,
             name: "Spring Cloud",
             level: "intermediate"
         }
