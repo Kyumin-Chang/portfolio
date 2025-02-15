@@ -19,7 +19,8 @@ const Header = ({toggleTheme, isDarkMode}) => {
                 <NavItem><ScrollLink to="architecture" smooth duration={500}
                                      offset={-50}>Architecture</ScrollLink></NavItem>
                 <NavItem><ScrollLink to="details" smooth duration={500} offset={-50}>Details</ScrollLink></NavItem>
-                <NavItem><ScrollLink to="implementation" smooth duration={500} offset={-50}>Implementation</ScrollLink></NavItem>
+                <NavItem><ScrollLink to="troubleshooting" smooth duration={500}
+                                     offset={-50}>Trouble Shooting</ScrollLink></NavItem>
             </>
         ) : (
             <>
@@ -76,7 +77,7 @@ const HeaderWrapper = styled.header`
     border-bottom: 1px solid ${({theme}) => theme.borderColor};
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         padding: 10px 20px;
     }
 `;
@@ -99,7 +100,7 @@ const Logo = styled.h1`
         cursor: pointer;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         font-size: 24px;
     }
 `;
@@ -111,7 +112,7 @@ const HamburgerIcon = styled.div`
     color: ${({theme}) => theme.textColor};
     margin-right: 20px;
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         display: flex;
         justify-content: center;
         margin-left: auto;
@@ -121,7 +122,7 @@ const HamburgerIcon = styled.div`
 const DesktopNavListWrapper = styled.div`
     display: flex;
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         display: none;
     }
 `;
@@ -141,7 +142,7 @@ const MobileMenuContainer = styled.div`
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-    @media (min-width: 860px) {
+    @media (min-width: 1090px) {
         display: none;
     }
 `;
@@ -153,7 +154,7 @@ const NavList = styled.ul`
     display: flex;
     gap: 30px;
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         flex-direction: column;
     }
 `;
@@ -181,7 +182,7 @@ const ThemeToggleWrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         width: 60px;
         height: 30px;
     }
@@ -217,7 +218,7 @@ const ThemeToggleLabel = styled.label`
         transform: ${({$isDarkMode}) => ($isDarkMode ? 'translateX(40px)' : 'translateX(0)')};
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         &::before {
             height: 20px;
             width: 20px;
@@ -235,7 +236,7 @@ const ToggleIcon = styled.div`
     color: ${({$isDarkMode}) => ($isDarkMode ? '#0D1117' : '#ffffff')};
     transition: left 0.3s ease;
 
-    @media (max-width: 860px) {
+    @media (max-width: 1090px) {
         font-size: 16px;
         left: ${({$isDarkMode}) => ($isDarkMode ? '8px' : 'calc(100% - 24px)')};
     }

@@ -290,13 +290,25 @@ const Home = () => {
                 },
             },
             {
+                breakpoint: 550,
+                settings: {
+                    centerPadding: "80px",
+                },
+            },
+            {
+                breakpoint: 520,
+                settings: {
+                    centerPadding: "70px",
+                },
+            },
+            {
                 breakpoint: 500,
                 settings: {
                     centerPadding: "50px",
                 },
             },
             {
-                breakpoint: 410,
+                breakpoint: 420,
                 settings: {
                     centerPadding: "30px",
                 },

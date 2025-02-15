@@ -230,6 +230,10 @@ export const Section = styled.section`
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
+
+        @media (max-width: 420px) {
+            font-size: 1.3rem;
+        }
     }
 
     p {
@@ -495,14 +499,14 @@ export const InfoBox = styled.div`
     @media (max-width: 430px) {
         padding: 20px;
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
     }
 
     @media (max-width: 390px) {
         padding: 20px;
         p {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 `;
@@ -533,6 +537,11 @@ export const EducationLogo = styled.img`
     @media (max-width: 860px) {
         width: 60px;
         height: 60px;
+    }
+
+    @media (max-width: 500px) {
+        width: 50px;
+        height: 50px;
     }
 `;
 
@@ -568,13 +577,13 @@ export const EducationDetails = styled.div`
         }
     }
 
-    @media (max-width: 430px) {
+    @media (max-width: 420px) {
         h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         p {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
     }
 
@@ -660,11 +669,11 @@ export const StrengthItem = styled.li`
         }
     }
 
-    @media (max-width: 430px) {
-        font-size: 1.1rem;
+    @media (max-width: 420px) {
+        font-size: 1rem;
 
         strong {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
     }
 
