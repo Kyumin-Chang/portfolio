@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
+import {Analytics} from "@vercel/analytics/react";
 import App from './App';
 import GlobalStyle from './GlobalStyle';
 
@@ -15,6 +16,7 @@ if (!rootElement) {
             <BrowserRouter>
                 <GlobalStyle/>
                 <App/>
+                <Analytics/>
             </BrowserRouter>
         </React.StrictMode>
     );
