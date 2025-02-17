@@ -12,6 +12,7 @@ export default Footer;
 const FooterWrapper = styled.footer`
     background-color: ${({theme}) => theme.footerColor};
     color: ${({theme}) => theme.textColor};
+    font-size: 1.2rem;
     text-align: center;
     padding: 80px;
     transition: background-color 0.3s ease, color 0.3s ease;

@@ -17,7 +17,9 @@ import {
     InfoBox,
     LeftContent,
     LowerSection,
+    MainProjectMobile,
     MainSection,
+    MobileButtonSection,
     PageWrapper,
     ProgressBar,
     ReadMore,
@@ -72,6 +74,7 @@ import {
 import {CustomNextArrow, CustomPrevArrow} from '../components/CustomArrows';
 import {Link, useNavigate} from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollToTopButton.jsx";
+import {GoProjectSymlink} from "react-icons/go";
 
 const lightTheme = {
     background: '#f0f0f5',
@@ -351,6 +354,12 @@ const Home = () => {
                             <SplitTextLine>Developer</SplitTextLine>
                         </RightContent>
                     </LowerSection>
+                    <MobileButtonSection>
+                        <Link
+                            to={`/project/1`}>
+                            <MainProjectMobile><GoProjectSymlink/> Main Project</MainProjectMobile>
+                        </Link>
+                    </MobileButtonSection>
                     <SocialLinks>
                         <SocialButton href="https://github.com/Kyumin-Chang"
                                       target="_blank"><FaGithub/> Github</SocialButton>

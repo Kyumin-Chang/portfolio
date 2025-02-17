@@ -108,10 +108,6 @@ const Project1 = () => {
     const [openStates, setOpenStates] = useState({});
     const [renderStates, setRenderStates] = useState({});
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
-
     const toggleBox = (boxId) => {
         setOpenStates((prev) => ({
             ...prev,
@@ -195,7 +191,7 @@ const Project1 = () => {
                 <ProjectContainer>
                     <ProjectMain>
                         <ProjectSlide>
-                            <SlideImg bgImage="/chatEATslide.png"/>
+                            <SlideImg bgImage="/zipbobslide.png"/>
                             <MainContent>
                                 <ProjectTitle>집밥 요리사</ProjectTitle>
                                 <h2>냉장고에 있는 재료를 기반으로 요리 레시피를 추천하는 서비스</h2>
@@ -735,21 +731,45 @@ const Project1 = () => {
                             <h2>프로젝트 시연</h2>
                             <ImageGallery>
                                 {[
-                                    {src: '/chatEAThome.png', description: '홈 화면입니다.'},
                                     {
-                                        src: '/chatEATregister.png',
-                                        description: '<span class="image-title">회원가입 화면입니다.</span>이메일과 닉네임을 입력하면 자동으로 중복 검사를 수행합니다.'
+                                        src: '/zipbob1.png',
+                                        description: '<span class="image-title">로그인 및 회원가입 화면입니다.' +
+                                            '</span>간편 로그인으로 로그인 후, 신규 회원이면 닉네임 생성 페이지로 이동합니다.'
                                     },
-                                    {src: '/chatEATlogin.png', description: '로그인 화면입니다.'},
-                                    {src: '/chatEAThomelogin.png', description: '로그인 후 홈 화면입니다.'},
-                                    {src: '/chatEATinfo.png', description: '회원 정보 화면입니다.'},
-                                    {src: '/chatEATedit.png', description: '회원 정보 수정 화면입니다.'},
-                                    {src: '/chatEATavatar.png', description: '아바타 수정 화면입니다.'},
                                     {
-                                        src: '/chatEATchat.png',
-                                        description: '<span class="image-title">채팅 화면입니다.</span>채팅을 보내면 AI 서버와 통신하여 응답을 받아옵니다.'
+                                        src: '/zipbob2.png',
+                                        description: '<span class="image-title">회원의 냉장고 화면입니다.' +
+                                            '</span>재료를 종류별로 보여줍니다. 소비기한이 만료된 재료는 (X) 표시로 알려줍니다.'
                                     },
-                                    {src: '/chatEATlike.png', description: '좋아요 화면입니다.'},
+                                    {
+                                        src: '/zipbob3.png',
+                                        description: '<span class="image-title">식재료 관리 화면입니다.' +
+                                            '</span>사용자의 냉장고의 식재료를 관리할 수 있으며, ' +
+                                            '<br />각 재료에 대한 양, 칼로리, 소비기한을 설정할 수 있습니다.'
+                                    },
+                                    {
+                                        src: '/zipbob4.png',
+                                        description: '<span class="image-title">레시피 추천 화면입니다.' +
+                                            '</span>사용자의 냉장고에서 재료를 선택하고 추천 버튼을 클릭하면 로딩이 되며,' +
+                                            '<br />이때 홈 버튼을 클릭하면 로딩 중 다른 화면을 볼 수 있습니다.'
+                                    },
+                                    {
+                                        src: '/zipbob5.png',
+                                        description: '<span class="image-title">레시피 추천 결과 화면입니다.' +
+                                            '</span>레시피 추천이 완료되면 사용자에게 알림을 보내고 추천 결과 화면으로 이동합니다.'
+                                    },
+                                    {
+                                        src: '/zipbob6.png',
+                                        description: '<span class="image-title">레시피 화면입니다.' +
+                                            '</span>레시피에 필요한 재료, 요리 방법이 자세하게 나와있으며, ' +
+                                            '<br />리뷰 보기를 누르면 각 레시피에 대한 다른 사용자들의 리뷰를 확인할 수 있습니다.'
+                                    },
+                                    {
+                                        src: '/zipbob7.png',
+                                        description: '<span class="image-title">리뷰 작성 및 내 정보 화면입니다.' +
+                                            '</span>요리 완성 버튼을 클릭하면 해당 요리에 대한 리뷰를 작성할 수 있습니다. ' +
+                                            '<br />하단의 내 정보를 클릭하면 현재 사용자의 닉네임을 확인 및 수정할 수 있습니다.'
+                                    },
                                 ].map((item, index) => (
                                     <div key={index} className="image-wrapper">
                                         <p dangerouslySetInnerHTML={{__html: item.description}}></p>

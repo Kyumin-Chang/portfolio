@@ -19,7 +19,7 @@ export const MainSection = styled.section`
     user-select: none;
 
     @media (max-width: 860px) {
-        padding: 40px 20px;
+        padding: 30px 20px;
         flex-direction: column;
     }
 `;
@@ -48,6 +48,7 @@ export const LowerSection = styled.div`
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        margin-bottom: 40px;
     }
 `;
 
@@ -169,7 +170,7 @@ export const SocialLinks = styled.div`
 
     @media (max-width: 860px) {
         gap: 30px;
-        margin-top: 50px;
+        margin-top: 40px;
     }
 `;
 
@@ -196,12 +197,57 @@ export const SocialButton = styled.a`
         @media (max-width: 860px) {
             font-size: 1.6rem;
         }
+
+        @media (max-width: 420px) {
+            font-size: 1.4rem;
+        }
     }
 
     @media (max-width: 860px) {
         font-size: 1.2rem;
         padding: 15px 30px;
     }
+
+    @media (max-width: 420px) {
+        font-size: 1rem;
+        padding: 15px 30px;
+    }
+`;
+
+export const MainProjectMobile = styled.div`
+    display: none;
+    @media (max-width: 940px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        max-width: 340px;
+        padding: 12px 85px;
+        color: ${({theme}) => theme.textColor};
+        border-radius: 40px;
+        font-size: 1.4rem;
+        transition: background-color 0.3s, color 0.3s, border 0.3s ease-in-out;
+        border: 1px solid ${({theme}) => theme.textColor};
+
+        &:hover {
+            color: ${({theme}) => theme.reverseTextColor};
+            background-color: ${({theme}) => theme.reverseColor};
+        }
+    }
+
+    @media (max-width: 420px) {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 350px) {
+        font-size: 1rem;
+    }
+`;
+
+export const MobileButtonSection = styled.div`
+    display: flex;
+    justify-content: center;
+    user-select: none;
 `;
 
 export const Section = styled.section`
