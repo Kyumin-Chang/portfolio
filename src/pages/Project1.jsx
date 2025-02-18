@@ -378,6 +378,26 @@ const Project1 = () => {
                                         </DetailContent>
                                     </DetailBox>
                                     <ContentCategory>
+                                        안정적인 서비스 운영을 위한 테스트 전략
+                                    </ContentCategory>
+                                    <DetailBox hasBlogIcon={false}>
+                                        <DetailContent>
+                                            Testcontainers를 활용해 데이터베이스와 메시지 브로커를 컨테이너화하고, {"\n"} 운영 환경과 유사한 통합 테스트를
+                                            수행하였습니다.
+                                        </DetailContent>
+                                    </DetailBox>
+                                    <DetailBox hasBlogIcon={false}>
+                                        <DetailContent>
+                                            단위 테스트에서는 Mockito와 JUnit5를 활용하여 독립적인 로직 검증을 수행하였습니다.
+                                        </DetailContent>
+                                    </DetailBox>
+                                    <DetailBox hasBlogIcon={false}>
+                                        <DetailContent>
+                                            전체 테스트 커버리지를 80% 이상 유지하며, 주요 기능과 API를 철저히 검증하였습니다. {"\n"} 이를 통해 코드 변경에도 안정적인
+                                            서비스 운영이 가능하도록 설계하였습니다.
+                                        </DetailContent>
+                                    </DetailBox>
+                                    <ContentCategory>
                                         SSE를 활용한 실시간 레시피 제공
                                     </ContentCategory>
                                     <DetailBox hasBlogIcon={false}>
