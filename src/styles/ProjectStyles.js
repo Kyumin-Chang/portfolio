@@ -70,6 +70,7 @@ export const MainContent = styled.div`
         margin-right: 80px;
         margin-left: 80px;
         font-size: 1.5rem;
+        white-space: pre-line;
 
         @media (max-width: 860px) {
             font-size: 1.3rem;
@@ -278,6 +279,7 @@ export const Section = styled.div`
 
         @media (max-width: 860px) {
             font-size: 1.3rem;
+            white-space: pre-line;
         }
 
         @media (max-width: 500px) {
@@ -292,7 +294,6 @@ export const Section = styled.div`
 
     @media (max-width: 860px) {
         padding: 40px 10px;
-        white-space: pre-line;
     }
 `;
 
@@ -531,12 +532,14 @@ export const DetailContent = styled.div`
     font-weight: normal;
     line-height: 1.7;
     padding: 10px;
+    white-space: pre-line;
 
     @media (max-width: 860px) {
         font-size: 1.3rem;
     }
 
     @media (max-width: 500px) {
+        white-space: normal;
         font-size: 1.2rem;
     }
 
@@ -734,7 +737,7 @@ export const TSHeaderBox = styled.div`
 `;
 
 export const TSMainContent = styled.div`
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -791,6 +794,7 @@ export const ProblemContent = styled.div`
         font-size: 1.2rem;
         width: 110%;
         padding: 15px;
+        white-space: normal;
     }
 
     @media (max-width: 420px) {
@@ -812,7 +816,7 @@ const glowAnimation = keyframes`
         box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
     }
     50% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 10px rgba(215, 177, 251, 0.8);
     }
     100% {
         box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
@@ -838,6 +842,7 @@ export const SolvingContent = styled.div`
         width: 105%;
         font-size: 1.2rem;
         padding: 20px;
+        white-space: normal;
     }
 
     @media (max-width: 420px) {
@@ -853,7 +858,7 @@ export const FinalContent = styled.div`
     max-width: 1200px;
     padding: 25px;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     border-radius: 15px;
     border: 3px solid ${({theme}) => theme.borderColor};
@@ -868,6 +873,7 @@ export const FinalContent = styled.div`
         width: 105%;
         font-size: 1.2rem;
         padding: 20px;
+        white-space: normal;
     }
 
     @media (max-width: 420px) {
@@ -881,22 +887,22 @@ export const VideoContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px 0;
+    margin: 20px 0;
 
-    h3 {
+    p {
         font-size: 1.6rem;
         margin-bottom: 20px;
         color: ${({theme}) => theme.textColor};
 
         @media (max-width: 860px) {
-            font-size: 1.4rem;
+            font-size: 1rem;
         }
     }
 `;
 
 export const ProjectVideo = styled.video`
-    width: 80%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
     border-radius: 12px;
 `;
@@ -920,7 +926,7 @@ export const ImageGallery = styled.div`
 
         p {
             margin: 30px 0;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: ${({theme}) => theme.textColor};
             padding: 8px 16px;
             text-align: justify;
@@ -940,8 +946,17 @@ export const ImageGallery = styled.div`
 
         .image-title {
             text-align: center;
+            font-size: 1.6rem;
             display: block;
             margin: 0;
+
+            @media (max-width: 860px) {
+                font-size: 1.4rem;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 860px) {
@@ -957,7 +972,7 @@ export const ImageGallery = styled.div`
 
 export const ProjectImage = styled.img`
     width: ${props => props.width || '100%'};
-    max-width: 800px;
+    max-width: 1200px;
     border-radius: 12px;
     margin-bottom: 40px;
 

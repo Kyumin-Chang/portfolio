@@ -259,13 +259,15 @@ const Project1 = () => {
                                     </ContentCategory>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            Spring Cloud Gateway를 활용해 API Gateway를 구축하고, 라우팅 및 부하 분산을 최적화하여 서비스 간의 트래픽을
+                                            Spring Cloud Gateway를 활용해 API Gateway를 구축하고, 라우팅 및 부하 분산을 최적화하여 {"\n"} 서비스
+                                            간의 트래픽을
                                             효율적으로 관리하였습니다.
                                         </DetailContent>
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={true}>
                                         <DetailContent>
-                                            Spring Cloud Config와 Cloud Bus를 통해 환경별 설정을 통합 관리하고 서비스 재배포 없이 쉽게 설정 변경이
+                                            Spring Cloud Config와 Cloud Bus를 통해 환경별 설정을 통합 관리하고 {"\n"} 서비스 재배포 없이 쉽게 설정
+                                            변경이
                                             가능하도록 구현하였습니다.
                                         </DetailContent>
                                         {(
@@ -281,7 +283,7 @@ const Project1 = () => {
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            공통 모듈을 분리하고 서비스 간 결합도를 낮춰 유지보수성과 확장성을 고려한 MSA 아키텍처를 설계하였습니다.
+                                            공통 모듈을 분리하고 서비스 간 결합도를 낮춰 유지보수성과 확장성을 고려한 {"\n"} MSA 아키텍처를 설계하였습니다.
                                         </DetailContent>
                                     </DetailBox>
                                     <ContentCategory>
@@ -289,7 +291,8 @@ const Project1 = () => {
                                     </ContentCategory>
                                     <DetailBox hasBlogIcon={true}>
                                         <DetailContent>
-                                            Read API의 트래픽 부하를 줄이기 위해 Redis를 활용한 캐싱 전략을 적용하여 데이터베이스 조회 요청을 최소화하였습니다.
+                                            Read API의 트래픽 부하를 줄이기 위해 Redis를 활용한 캐싱 전략을 적용하여 {"\n"} 데이터베이스 조회 요청을
+                                            최소화하였습니다.
                                         </DetailContent>
                                         {(
                                             <BlogIconWrapper>
@@ -304,8 +307,8 @@ const Project1 = () => {
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={true}>
                                         <DetailContent>
-                                            읽기/쓰기 분리를 위한 Master-Slave 구조를 적용하고, AOP 기반 동적 라우팅을 통해 API 요청별로 자동으로 적절한
-                                            데이터베이스를 선택하도록 최적화하였습니다
+                                            읽기/쓰기 분리를 위한 Master-Slave 구조를 적용하고, AOP 기반 동적 라우팅을 통해 {"\n"} API 요청별로 적절한
+                                            데이터베이스를 자동으로 선택하도록 최적화하였습니다
                                         </DetailContent>
                                         {(
                                             <BlogIconWrapper>
@@ -323,13 +326,14 @@ const Project1 = () => {
                                     </ContentCategory>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            OAuth 2.0을 적용하여 Google, Kakao 등의 소셜 로그인 기능을 구현하고, 기존의 JWT 기반 인증과 통합하여
+                                            OAuth 2.0을 적용하여 Google, Kakao 등의 소셜 로그인 기능을 구현하고, {"\n"} 기존의 JWT 기반 인증과 통합하여
                                             관리하였습니다.
                                         </DetailContent>
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={true}>
                                         <DetailContent>
-                                            OAuth2User, UserDetails를 통합한 PrincipalDetails 객체를 만들어 일반 로그인과 소셜 로그인의 인증 로직을
+                                            OAuth2User, UserDetails를 통합한 PrincipalDetails 객체를 만들어 {"\n"} 일반 로그인과 소셜 로그인의
+                                            인증 로직을
                                             일관되게 처리하였습니다.
                                         </DetailContent>
                                         {(
@@ -369,7 +373,7 @@ const Project1 = () => {
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            Spring AMQP와 RabbitTemplate을 활용해 메시지 생산자와 소비자를 구현하고, DLX(Dead Letter
+                                            Spring AMQP와 RabbitTemplate을 활용해 메시지 생산자와 소비자를 구현하고, {"\n"} DLX(Dead Letter
                                             Exchange)를 적용하여 메시지 재처리 전략을 적용하였습니다.
                                         </DetailContent>
                                     </DetailBox>
@@ -378,12 +382,13 @@ const Project1 = () => {
                                     </ContentCategory>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            SSE(Server-Sent Events)를 활용하여 레시피가 완성되면 실시간으로 사용자에게 알림을 보내, 사용자 경험을 향상시켰습니다.
+                                            SSE(Server-Sent Events)를 활용하여 레시피가 완성되면 실시간으로 사용자에게 알림을 보내, {"\n"} 사용자 경험을
+                                            향상시켰습니다.
                                         </DetailContent>
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            RabbitMQ와 결합하여 서버에서 발생하는 이벤트를 SSE를 통해 즉시 클라이언트에 전달하도록 설계하였습니다.
+                                            RabbitMQ와 결합하여 서버에서 발생하는 이벤트를 SSE를 통해 {"\n"} 즉시 클라이언트에 전달하도록 설계하였습니다.
                                         </DetailContent>
                                     </DetailBox>
                                 </ContentCategoryBox>
@@ -416,7 +421,8 @@ const Project1 = () => {
                                             <TSBasicBox>
                                                 문제 상황
                                                 <ProblemContent>
-                                                    Read API(냉장고 데이터 조회)가 트래픽 증가 시 데이터베이스 부하가 급격히 증가하며 응답 시간이 느려지는 문제가
+                                                    Read API(냉장고 데이터 조회)가 트래픽 증가 시 데이터베이스 부하가 급격히 증가하며 {"\n"} 응답 시간이
+                                                    느려지는 문제가
                                                     발생하였습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
@@ -441,13 +447,13 @@ const Project1 = () => {
                                             <TSBasicBox>
                                                 결론
                                                 <FinalContent>
-                                                    회원 정보 조회 응답 시간이 1874ms → 610ms (약 67% 개선)
+                                                    회원 정보 조회 응답 시간이 1874ms → 610ms 으로 약 67% 개선되었습니다.
                                                 </FinalContent>
                                                 <FinalContent>
-                                                    Cache Warm-Up 효과를 활용하여 반복적인 조회 요청에서 성능을 더욱 최적화
+                                                    Cache Warm-Up 효과를 활용하여 반복적인 조회 요청에서 성능을 더욱 최적화하였습니다.
                                                 </FinalContent>
                                                 <FinalContent>
-                                                    대규모 트래픽에서도 안정적인 서비스 운영이 가능한 구조를 구축
+                                                    대규모 트래픽에서도 안정적인 서비스 운영이 가능한 구조를 구축하였습니다.
                                                 </FinalContent>
                                             </TSBasicBox>
                                         </>
@@ -475,37 +481,37 @@ const Project1 = () => {
                                             <TSBasicBox>
                                                 문제 상황
                                                 <ProblemContent>
-                                                    기존에는 Git 저장소(Config Server의 Native Repo)에서 시크릿을 관리했으며, 이는 보안 위험과
-                                                    운영상의 불편함을 초래하였습니다.
+                                                    기존에는 Git 저장소(Config Server의 Native Repo)에서 시크릿을 관리했으며, {"\n"} Git
+                                                    Secret 이용시 관리에 대한 불편함이 있었습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
-                                                    Config Server에서 환경 변수를 통해 시크릿을 관리하던 방식은 버전 관리가 어렵고, 접근 제어가 불가능하여 운영의
-                                                    불편함이 있었습니다.
+                                                    Config Server에서 환경 변수를 통해 시크릿을 관리하던 방식은 버전 관리가 어렵고, {"\n"} 접근 제어가
+                                                    불가능하여 운영의 불편함이 있었습니다.
                                                 </ProblemContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
                                             <TSBasicBox>
                                                 해결 방안
                                                 <SolvingContent>
-                                                    Vault를 도입하여 시크릿을 중앙 집중적으로 관리하고, Config Server에서만 Vault에 접근하도록 하여 개별
-                                                    서비스는 Config Server를 통해 설정값을 가져오도록 개선하였습니다.
+                                                    Vault를 도입하여 시크릿을 중앙 집중적으로 관리하고, Config Server에서만 Vault에 접근하도록
+                                                    하여 {"\n"} 개별 서비스는 Config Server를 통해 설정값을 가져오도록 개선하였습니다.
                                                 </SolvingContent>
                                                 <SolvingContent>
-                                                    환경별 시크릿 관리를 위해 Vault 내부에 각 서비스별(dev, prod, test)로 분리된 저장소를 구축하여 운영
-                                                    환경별로 다른 설정을 적용할 수 있도록 구성하였습니다.
+                                                    환경별 시크릿 관리를 위해 Vault 내부에 각 서비스별(dev, prod, test)로 분리된 저장소를
+                                                    구축하여 {"\n"} 운영 환경별로 다른 설정을 적용할 수 있도록 구성하였습니다.
                                                 </SolvingContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
                                             <TSBasicBox>
                                                 결론
                                                 <FinalContent>
-                                                    Git에서 시크릿을 제거하여 보안성을 강화하고 운영 편의성을 향상함
+                                                    Git에서 시크릿을 제거하여 보안성을 강화하고 운영 편의성을 향상하였습니다.
                                                 </FinalContent>
                                                 <FinalContent>
-                                                    Vault를 활용한 접근 제어 및 버전 관리로 보안성과 안정성을 개선함
+                                                    Vault를 활용한 접근 제어 및 버전 관리로 보안성과 안정성을 개선하였습니다.
                                                 </FinalContent>
                                                 <FinalContent>
-                                                    Spring Cloud Config와 Vault 통합으로 유지보수성과 확장성을 향상함
+                                                    Spring Cloud Config와 Vault 통합으로 유지보수성과 확장성을 향상하였습니다.
                                                 </FinalContent>
                                             </TSBasicBox>
                                         </>
@@ -535,12 +541,12 @@ const Project1 = () => {
                                             <TSBasicBox>
                                                 문제 상황
                                                 <ProblemContent>
-                                                    회원가입 및 회원탈퇴 시 Java Mail Sender를 활용하여 이메일을 전송하는 로직을 컨트롤러 내부에 직접
-                                                    구현하였습니다.
+                                                    회원가입 및 회원탈퇴 시 Java Mail Sender를 활용하여 이메일을 전송하는 로직을 {"\n"} 컨트롤러 내부에
+                                                    직접 구현하였습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
-                                                    SMTP 서버와의 통신이 동기적으로 처리되면서 응답 시간이 증가하였으며, 실제 측정 결과 95ms → 4797ms(약
-                                                    50배 증가) 로 확인되었습니다.
+                                                    SMTP 서버와의 통신이 동기적으로 처리되면서 응답 시간이 증가하였으며, {"\n"} 실제 측정 결과 95ms →
+                                                    4797ms(약 50배 증가) 로 확인되었습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
                                                     사용자가 많아질 경우, 스레드 부족으로 인해 작업 처리 지연 및 시스템 과부하가 발생할 가능성이 있었습니다.
@@ -558,17 +564,17 @@ const Project1 = () => {
                                                 </SolvingContent>
                                                 <SolvingContent>
                                                     rabbitTemplate.convertAndSend()를 사용하여 메시지를 전송하고, @RabbitListener를
-                                                    활용해 큐에서 처리하도록 구현하였습니다.
+                                                    활용해 {"\n"} 큐에서 처리하도록 구현하였습니다.
                                                 </SolvingContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
                                             <TSBasicBox>
                                                 결론
                                                 <FinalContent>
-                                                    응답 시간 4797ms → 89ms (약 98% 개선)
+                                                    응답 시간 4797ms → 89ms 으로 약 98% 개선하였습니다.
                                                 </FinalContent>
                                                 <FinalContent>
-                                                    대규모 트래픽 테스트 및 쿠버네티스 환경에서도 안정적인 이메일 전송이 가능하도록 최적화
+                                                    대규모 트래픽 테스트 및 쿠버네티스 환경에서도 안정적인 이메일 전송이 가능하도록 최적화하였습니다.
                                                 </FinalContent>
                                             </TSBasicBox>
                                         </>
@@ -597,11 +603,12 @@ const Project1 = () => {
                                             <TSBasicBox>
                                                 문제 상황
                                                 <ProblemContent>
-                                                    Edge Service에서 인증을 처리했지만, 내부 서비스에서 추가 검증 없이 요청을 처리하면서 다른 사용자의 데이터를
-                                                    조회할 수 있는 보안 취약점이 발생하였습니다.
+                                                    Edge Service에서 인증을 처리했지만, 내부 서비스에서 추가 검증 없이 요청을 처리하면서 {"\n"} 다른 사용자의
+                                                    데이터를 조회할 수 있는 보안 취약점이 발생하였습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
-                                                    클라이언트에서 임의의 memberId를 포함한 요청을 보내면, 데이터 소유자 여부와 관계없이 정보가 반환될 수 있는
+                                                    클라이언트에서 임의의 memberId를 포함한 요청을 보내면, 데이터 소유자 여부와 관계없이 {"\n"} 정보가 반환될 수
+                                                    있는
                                                     문제였습니다.
                                                 </ProblemContent>
                                             </TSBasicBox>
@@ -610,10 +617,11 @@ const Project1 = () => {
                                                 해결 방안
                                                 <SolvingContent>
                                                     Edge Service에서 memberId를 추출해 X-Member-Id 헤더에 포함하여 내부 서비스로 전달하도록
-                                                    Gateway 필터를 구현하였습니다.
+                                                    {"\n"} Gateway 필터를 구현하였습니다.
                                                 </SolvingContent>
                                                 <SolvingContent>
-                                                    내부 서비스에서 X-Member-Id와 요청된 memberId를 비교하여 사용자가 본인의 데이터에만 접근할 수 있도록 검증
+                                                    내부 서비스에서 X-Member-Id와 요청된 memberId를 비교하여 사용자가 본인의 데이터에만 접근할
+                                                    수 {"\n"} 있도록 검증
                                                     로직을 추가하였습니다.
                                                 </SolvingContent>
                                             </TSBasicBox>
@@ -622,7 +630,7 @@ const Project1 = () => {
                                                 결론
                                                 <FinalContent>
                                                     인증된 사용자라도 자신의 데이터만 조회할 수 있도록 보안을 강화하여 {"\n"}
-                                                    불법적인 데이터 접근 차단
+                                                    불법적인 데이터 접근 차단하였습니다.
                                                 </FinalContent>
                                             </TSBasicBox>
                                         </>
@@ -651,13 +659,11 @@ const Project1 = () => {
                                                 문제 상황
                                                 <ProblemContent>
                                                     Refrigerator(냉장고)와 Ingredient(재료) 엔티티가 양방향 연관관계(@OneToMany,
-                                                    @ManyToOne)로
-                                                    설정되어 있어, 냉장고를 조회할 때 N+1 문제가 발생하였습니다.
+                                                    @ManyToOne)로 설정되어 있어, 냉장고를 조회할 때 N+1 문제가 발생하였습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
-                                                    findAll()을 실행하면 냉장고를 조회하는 쿼리는 1회 실행되지만, 각 냉장고에 포함된 재료를 조회하기 위해 추가적으로
-                                                    냉장고
-                                                    개수만큼 쿼리가 발생하였습니다.
+                                                    findAll()을 실행하면 냉장고를 조회하는 쿼리는 1회 실행되지만, 각 냉장고에 포함된 재료를 조회하기
+                                                    위해 {"\n"} 추가적으로 냉장고 개수만큼 쿼리가 발생하였습니다.
                                                 </ProblemContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
@@ -668,24 +674,22 @@ const Project1 = () => {
                                                     r.ingredients) 를 적용하고, 냉장고와 재료를 한 번의 쿼리로 조회하도록 최적화하였습니다.
                                                 </SolvingContent>
                                                 <SolvingContent>
-                                                    Entity Graph(@EntityGraph(attributePaths = ingredients)) 를 활용하여 연관된
-                                                    엔티티를
-                                                    효율적으로 로딩하였습니다.
+                                                    Entity Graph(@EntityGraph(attributePaths = ingredients)) 를
+                                                    활용하여 연관된 엔티티를 효율적으로 {"\n"} 로딩하였습니다.
                                                 </SolvingContent>
                                                 <SolvingContent>
                                                     Batch Size (@BatchSize(size = 100)) 를 설정하여, 냉장고 10개 조회 시 발생하는 쿼리를
-                                                    10개 → 1개로
-                                                    줄여 성능을 개선하였습니다.
+                                                    10개 → 1개로 {"\n"} 줄여 성능을 개선하였습니다.
                                                 </SolvingContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
                                             <TSBasicBox>
                                                 결론
                                                 <FinalContent>
-                                                    냉장고 전체 조회 시 응답 시간 : 3526ms → 540ms(85% 개선)
+                                                    냉장고 전체 조회 시 응답 시간을 3526ms → 540ms 으로 약 85% 개선하였습니다.
                                                 </FinalContent>
                                                 <FinalContent>
-                                                    재료 전체 조회 시 응답 시간 : 3383ms → 206ms(94% 개선)
+                                                    재료 전체 조회 시 응답 시간 을 3383ms → 206ms 으로 약 94% 개선하였습니다.
                                                 </FinalContent>
                                             </TSBasicBox>
                                         </>
@@ -702,24 +706,26 @@ const Project1 = () => {
                                                 문제 상황
                                                 <ProblemContent>
                                                     Refrigerator와 Ingredient 엔티티 간 양방향 관계를 설정하면서, Jackson이 직렬화할 때 무한 루프가
-                                                    발생하여 API 응답이 정상적으로 반환되지 않는 문제가 발생하였습니다.
+                                                    {"\n"} 발생하여 API 응답이 정상적으로 반환되지 않는 문제가 발생하였습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
-                                                    @OneToMany와 @ManyToOne 관계에서 서로 참조하는 객체를 JSON으로 변환하는 과정에서 발생한 문제였습니다.
+                                                    @OneToMany와 @ManyToOne 관계에서 서로 참조하는 객체를 JSON으로 변환하는 과정에서
+                                                    발생한 {"\n"} 문제였습니다.
                                                 </ProblemContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
                                             <TSBasicBox>
                                                 해결 방안
                                                 <SolvingContent>
-                                                    @JsonIgnore를 사용하여 한쪽 방향의 직렬화를 방지하고, 불필요한 필드가 직렬화되지 않도록 설정하였습니다.
+                                                    @JsonIgnore를 사용하여 한쪽 방향의 직렬화를 방지하고, 불필요한 필드가 직렬화되지
+                                                    않도록 {"\n"} 설정하였습니다.
                                                 </SolvingContent>
                                             </TSBasicBox>
                                             <StyledArrowDown/>
                                             <TSBasicBox>
                                                 결론
                                                 <FinalContent>
-                                                    정상적으로 API 응답 반환 및 불필요한 데이터를 줄여 API 응답 크기를 약 60% 감소.
+                                                    정상적으로 API 응답이 반환되고, 불필요한 데이터를 줄여 API 응답 크기가 약 60% 감소하였습니다.
                                                 </FinalContent>
                                             </TSBasicBox>
                                         </>
@@ -775,8 +781,8 @@ const Project1 = () => {
                                         <p dangerouslySetInnerHTML={{__html: item.description}}></p>
                                         <ProjectImage
                                             src={item.src}
-                                            alt={`ChatEAT Implementation Image ${index + 1}`}
-                                            width="100%"
+                                            alt={`Zipbob Implementation Image ${index + 1}`}
+                                            width="80%"
                                         />
                                     </div>
                                 ))}

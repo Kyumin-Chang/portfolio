@@ -260,6 +260,7 @@ export const Section = styled.section`
         color: ${({theme}) => theme.textColor};
         position: relative;
         display: inline-block;
+        user-select: none;
 
         &::after {
             content: '';
