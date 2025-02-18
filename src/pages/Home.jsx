@@ -334,7 +334,7 @@ const Home = () => {
                         <SplitTextLine>Backend</SplitTextLine>
                         <Link
                             to={`/project/1`}><StyledButton>
-                            <span>MAIN PROJECT</span>
+                            <span><GoProjectSymlink/> MAIN PROJECT</span>
                         </StyledButton>
                         </Link>
                     </UpperSection>

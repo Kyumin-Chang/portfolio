@@ -437,7 +437,7 @@ const Project3 = () => {
                                         <ProjectImage
                                             src={item.src}
                                             alt={`Golang Implementation Image ${index + 1}`}
-                                            width="80%"
+                                            width="60%"
                                         />
                                     </div>
                                 ))}

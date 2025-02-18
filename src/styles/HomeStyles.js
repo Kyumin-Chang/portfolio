@@ -110,15 +110,14 @@ export const StyledButton = styled.button`
     color: ${({theme}) => theme.reverseTextColor};
     border: none;
     border-radius: 50px;
-    padding: 30px 120px;
-    font-size: 25px;
+    padding: 35px 120px;
+    font-size: 2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     position: relative;
     overflow: hidden;
     outline: none;
@@ -127,6 +126,7 @@ export const StyledButton = styled.button`
         position: relative;
         z-index: 1;
         display: flex;
+        gap: 10px;
         align-items: center;
         transition: transform 0.5s ease-in-out;
     }
@@ -136,7 +136,7 @@ export const StyledButton = styled.button`
         position: absolute;
         left: 0;
         top: 0;
-        height: 490%;
+        height: 550%;
         width: 140%;
         background: #46929c;
         transition: all .5s ease-in-out;

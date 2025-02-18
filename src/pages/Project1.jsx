@@ -782,7 +782,7 @@ const Project1 = () => {
                                         <ProjectImage
                                             src={item.src}
                                             alt={`Zipbob Implementation Image ${index + 1}`}
-                                            width="80%"
+                                            width="70%"
                                         />
                                     </div>
                                 ))}
