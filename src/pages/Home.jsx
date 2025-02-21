@@ -396,7 +396,7 @@ const Home = () => {
                                 <EducationDetails>
                                     <h3>카카오 테크 부트캠프 1기</h3>
                                     <p>풀스택 과정</p>
-                                    <p>2024.06 - 2024.12</p>
+                                    <p>2024.07 - 2024.12</p>
                                 </EducationDetails>
                             </EducationBox>
                         </AboutMeTopCategory>
