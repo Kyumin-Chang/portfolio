@@ -76,36 +76,6 @@ const Project4 = () => {
     });
     const theme = isDarkMode ? darkTheme : lightTheme;
 
-    const [openStates, setOpenStates] = useState({});
-    const [renderStates, setRenderStates] = useState({});
-
-    const toggleBox = (boxId) => {
-        setOpenStates((prev) => ({
-            ...prev,
-            [boxId]: !prev[boxId],
-        }));
-    };
-
-    useEffect(() => {
-        Object.keys(openStates).forEach((boxId) => {
-            if (openStates[boxId]) {
-                setRenderStates((prev) => ({
-                    ...prev,
-                    [boxId]: true,
-                }));
-            } else {
-                const timer = setTimeout(() => {
-                    setRenderStates((prev) => ({
-                        ...prev,
-                        [boxId]: false,
-                    }));
-                }, 500);
-
-                return () => clearTimeout(timer);
-            }
-        });
-    }, [openStates]);
-
     useEffect(() => {
         localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
     }, [isDarkMode]);
@@ -125,6 +95,9 @@ const Project4 = () => {
         },
     ];
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <ThemeProvider theme={theme}>
@@ -320,7 +293,7 @@ const Project4 = () => {
                                         <p dangerouslySetInnerHTML={{__html: item.description}}></p>
                                         <ProjectImage
                                             src={item.src}
-                                            alt={`Zipbob Implementation Image ${index + 1}`}
+                                            alt={`Project Implementation Image ${index + 1}`}
                                             width="80%"
                                         />
                                     </div>
