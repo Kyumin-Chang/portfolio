@@ -445,9 +445,8 @@ const Project1 = () => {
                                             <TSBasicBox>
                                                 문제 상황
                                                 <ProblemContent>
-                                                    Read API(냉장고 데이터 조회)가 트래픽 증가 시 데이터베이스 부하가 급격히 증가하며 {"\n"} 응답 시간이
-                                                    느려지는 문제가
-                                                    발생하였습니다.
+                                                    Read API(냉장고 데이터 조회)가 트래픽 증가 시 사용량이 많아 데이터베이스 부하가 급격히 증가하며 {"\n"} 응답
+                                                    시간이 느려지는 문제가 발생하였습니다.
                                                 </ProblemContent>
                                                 <ProblemContent>
                                                     JMeter를 활용한 대규모 트래픽 테스트 결과, 회원 정보 조회 응답 시간이 평균 1874ms로
@@ -583,8 +582,9 @@ const Project1 = () => {
                                                     @Async를 사용하여 이메일 전송을 비동기로 처리하고, 응답 시간을 4797ms → 88ms로 단축하였습니다.
                                                 </SolvingContent>
                                                 <SolvingContent>
-                                                    기존에 사용 중인 RabbitMQ를 도입하여 이메일 요청을 큐에 적재하고, 별도의 Consumer가 메일을 전송하는 구조로
-                                                    변경하였습니다.
+                                                    메세지 손실에 대비하여, 재처리 로직을 적용하기 위해 기존에 사용 중인 RabbitMQ를 도입하여 이메일 요청을 큐에
+                                                    적재하고,
+                                                    별도의 Consumer가 메일을 전송하는 구조로 변경하였습니다.
                                                 </SolvingContent>
                                                 <SolvingContent>
                                                     rabbitTemplate.convertAndSend()를 사용하여 메시지를 전송하고, @RabbitListener를
