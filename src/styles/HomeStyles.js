@@ -733,6 +733,95 @@ export const StrengthItem = styled.li`
     }
 `;
 
+export const ProjectGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    @media (max-width: 960px) {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+`;
+
+export const ProjectCard = styled.div`
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 335px;
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(${({$image}) => $image});
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0 auto;
+`;
+
+export const ProjectOverlay = styled.div`
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+
+    background-color: ${({theme}) => theme.cardBackgroundColor};
+`;
+
+export const ProjectTitle = styled.h3`
+    font-size: 3rem;
+    font-weight: 800;
+    color: ${({theme}) => theme.textColor};
+    margin-bottom: 12px;
+    text-align: left;
+`;
+
+export const ProjectDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+
+    p {
+        font-size: 1.4rem;
+        color: ${({theme}) => theme.textColor};
+        line-height: 1.4;
+        font-weight: 500;
+        margin: 0;
+    }
+`;
+
+export const FixedTagList = styled.div`
+    width: 100%;
+    background-color: ${({theme}) => theme.cardBackgroundColor};
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+`;
+
+export const Tag = styled.span`
+    background-color: ${({color}) => `${color}66`};
+    color: ${({theme}) => theme.textColor};
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid ${({color}) => `${color}aa`};
+    box-shadow: 0 4px 12px ${({color}) => `${color}44`};
+`;
+
 export const SkillsContainer = styled.div`
     position: relative;
     width: 100%;

@@ -14,6 +14,7 @@ import {
     EducationBox,
     EducationDetails,
     EducationLogo,
+    FixedTagList,
     InfoBox,
     LeftContent,
     LowerSection,
@@ -22,6 +23,11 @@ import {
     MobileButtonSection,
     PageWrapper,
     ProgressBar,
+    ProjectCard,
+    ProjectDescription,
+    ProjectGrid,
+    ProjectOverlay,
+    ProjectTitle,
     ReadMore,
     ReadMoreArrowButton,
     ReadMoreButton,
@@ -40,6 +46,7 @@ import {
     StrengthItem,
     StrengthList,
     StyledButton,
+    Tag,
     UpperSection
 } from '../styles/HomeStyles';
 import {
@@ -58,17 +65,24 @@ import {
 } from 'react-icons/fa';
 import {
     SiApachejmeter,
+    SiApachekafka,
+    SiElasticsearch,
     SiFigma,
     SiGithubactions,
+    SiGrafana,
+    SiKibana,
     SiKubernetes,
+    SiLogstash,
     SiMariadb,
     SiMongodb,
     SiMysql,
     SiNotion,
+    SiPrometheus,
     SiRabbitmq,
     SiRedis,
     SiSpring,
     SiSpringsecurity,
+    SiVault,
     SiVelog
 } from "react-icons/si";
 import {CustomNextArrow, CustomPrevArrow} from '../components/CustomArrows';
@@ -118,24 +132,48 @@ const projects = [
         title: 'Zip Bob',
         description: '자취생을 위한, 집에 있는 재료로 다양한 레시피 추천',
         image: '/project1.png',
+        tags: ['Spring', 'Spring Cloud', 'MariaDB', 'MongoDB', 'Redis'],
+        hoverDescription: [
+            '냉장고 재료 기반 AI 레시피 추천 서비스',
+            'Spring Cloud 기반 MSA 구조 적용',
+            'Redis 캐싱 및 RabbitMQ 비동기 처리'
+        ]
     },
     {
         id: 2,
         title: 'ChatEAT',
         description: '맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇',
         image: '/project2.png',
+        tags: ['React', 'Spring', 'MySQL', 'MongoDB', 'Redis', 'AWS'],
+        hoverDescription: [
+            '특정 위치 주변 맛집 추천 AI 채팅 서비스',
+            'OAuth2.0 및 JWT를 이용한 회원 인증',
+            'WebSocket을 활용한 실시간 채팅 서비스 구현'
+        ]
     },
     {
         id: 3,
         title: 'Golang',
         description: '갈등 완화/커뮤니케이션 상승 채팅 웹 서비스',
         image: '/project3.png',
+        tags: ['React', 'Spring', 'MariaDB', 'MongoDB', 'Redis', 'Docker'],
+        hoverDescription: [
+            'LLM을 이용한 갈등 완화 채팅 서비스',
+            'Nginx를 이용한 서버 배포 및 Https 구성',
+            'Redis pub/sub 구조를 활용한 실시간 채팅'
+        ]
     },
     {
         id: 4,
         title: 'Portfolio',
         description: '포트폴리오 웹사이트 제작',
         image: '/project4.png',
+        tags: ['React'],
+        hoverDescription: [
+            'React + Vite를 이용한 안정성 높은 포트폴리오 사이트 구현',
+            '모든 디바이스 최적화, 반응형 디자인 구현',
+            '문제 해결 중심의 포트폴리오 사이트 제작'
+        ]
     }
 ];
 
@@ -172,17 +210,17 @@ const skills = {
             level: "intermediate"
         }
     ],
-    Frontend: [
-        {icon: <FaReact className="skill-icon" color={"#61DAFB"}/>, name: "React", level: "intermediate"},
-        {icon: <FaHtml5 className="skill-icon" color={"#E34F26"}/>, name: "HTML", level: "intermediate"},
-        {icon: <FaCss3Alt className="skill-icon" color={"#1572B6"}/>, name: "CSS", level: "intermediate"},
-        {icon: <FaJsSquare className="skill-icon" color={"#F7DF1E"}/>, name: "JavaScript", level: "intermediate"},
-    ],
     Database: [
         {icon: <SiMysql className="skill-icon" color={"#4479A1"}/>, name: "MySQL", level: "advanced"},
         {icon: <SiMariadb className="skill-icon" color={"#003545"}/>, name: "MariaDB", level: "advanced"},
         {icon: <SiMongodb className="skill-icon" color={"#47A248"}/>, name: "MongoDB", level: "advanced"},
-        {icon: <SiRedis className="skill-icon" color={"#FF4438"}/>, name: "Redis", level: "advanced"}
+        {icon: <SiRedis className="skill-icon" color={"#FF4438"}/>, name: "Redis", level: "advanced"},
+        {icon: <SiVault className="skill-icon" color={"#FFEC6E"}/>, name: "Vault", level: "intermediate"},
+        {
+            icon: <SiElasticsearch className="skill-icon" color={"#005571"}/>,
+            name: "Elasticsearch",
+            level: "intermediate"
+        }
     ],
     Deployment: [
         {icon: <FaAws className="skill-icon" color={"#FF9900"}/>, name: "AWS", level: "intermediate"},
@@ -190,13 +228,23 @@ const skills = {
         {icon: <SiKubernetes className="skill-icon" color={"#326CE5"}/>, name: "Kubernetes", level: "basic"},
         {icon: <SiGithubactions className="skill-icon" color={"#2088FF"}/>, name: "Github Actions", level: "basic"}
     ],
-    "Version Control": [
-        {icon: <FaGit className="skill-icon" color={"#F05032"}/>, name: "Git", level: "advanced"},
-        {icon: <FaGithub className="skill-icon" color={"#181717"}/>, name: "Github", level: "advanced"}
+    "Monitoring Tools": [
+        {icon: <SiPrometheus className="skill-icon" color={"#E6522C"}/>, name: "Prometheus", level: "intermediate"},
+        {icon: <SiGrafana className="skill-icon" color={"#F46800"}/>, name: "Grafana", level: "intermediate"},
+        {icon: <SiLogstash className="skill-icon" color={"#005571"}/>, name: "Logstash", level: "intermediate"},
+        {icon: <SiKibana className="skill-icon" color={"#005571"}/>, name: "Kibana", level: "intermediate"}
+    ],
+    Frontend: [
+        {icon: <FaReact className="skill-icon" color={"#61DAFB"}/>, name: "React", level: "intermediate"},
+        {icon: <FaHtml5 className="skill-icon" color={"#E34F26"}/>, name: "HTML", level: "intermediate"},
+        {icon: <FaCss3Alt className="skill-icon" color={"#1572B6"}/>, name: "CSS", level: "intermediate"},
+        {icon: <FaJsSquare className="skill-icon" color={"#F7DF1E"}/>, name: "JavaScript", level: "intermediate"},
     ],
     "Other Tools": [
+        {icon: <SiApachekafka className="skill-icon" color={"#000000"}/>, name: "Kafka", level: "intermediate"},
         {icon: <SiRabbitmq className="skill-icon" color={"#FF6600"}/>, name: "RabbitMQ", level: "advanced"},
         {icon: <SiApachejmeter className="skill-icon" color={"#D22128"}/>, name: "JMeter", level: "intermediate"},
+        {icon: <FaGit className="skill-icon" color={"#F05032"}/>, name: "Git", level: "advanced"},
         {icon: <SiNotion className="skill-icon" color={"#000000"}/>, name: "Notion", level: "advanced"},
         {icon: <SiFigma className="skill-icon" color={"#F24E1E"}/>, name: "Figma", level: "basic"}
     ]
@@ -208,6 +256,47 @@ const skillLevels = {
     advanced: "#7b97ff"
 };
 
+const tagColorMap = {
+    // ✅ Backend
+    Java: '#FF7800',
+    Spring: '#6DB33F',
+    'Spring Security': '#6DB33F',
+    'Spring Cloud': '#6DB33F',
+
+    // ✅ Frontend
+    React: '#61DAFB',
+    HTML: '#E34F26',
+    CSS: '#1572B6',
+    JavaScript: '#F7DF1E',
+
+    // ✅ Database
+    MySQL: '#4479A1',
+    MariaDB: '#003545',
+    MongoDB: '#47A248',
+    Redis: '#FF4438',
+    Vault: '#FFEC6E',
+    Elasticsearch: '#005571',
+
+    // ✅ Deployment
+    AWS: '#FF9900',
+    Docker: '#2496ED',
+    Kubernetes: '#326CE5',
+    'Github Actions': '#2088FF',
+
+    // ✅ Monitoring Tools
+    Prometheus: '#E6522C',
+    Grafana: '#F46800',
+    Logstash: '#005571',
+    Kibana: '#005571',
+
+    // ✅ Other Tools
+    Kafka: '#231F20',
+    RabbitMQ: '#FF6600',
+    JMeter: '#D22128',
+    Git: '#F05032',
+    Notion: '#000000',
+    Figma: '#F24E1E',
+};
 
 const getSkillLevel = (level) => {
     switch (level) {
@@ -331,7 +420,7 @@ const Home = () => {
                 <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
                 <MainSection>
                     <UpperSection>
-                        <SplitTextLine>Backend</SplitTextLine>
+                        <SplitTextLine>Server</SplitTextLine>
                         <Link
                             to={`/project/1`}><StyledButton>
                             <span><GoProjectSymlink/> MAIN PROJECT</span>
@@ -341,10 +430,10 @@ const Home = () => {
                     <LowerSection>
                         <LeftContent>
                             <p>
-                                끊임없이 고민하며 성장하고
+                                실전 문제 해결과 깊이 있는 몰입으로
                             </p>
                             <p>
-                                협업을 잘하는 개발자,
+                                성장의 곡선을 만들어 온 서버 개발자,
                             </p>
                             <p>
                                 장규민입니다.
@@ -408,6 +497,32 @@ const Home = () => {
                             </StrengthList>
                         </AboutMeBottomBox>
                     </AboutMeGrid>
+                </Section>
+                <Section id="project-gallery">
+                    <h2>Project Gallery</h2>
+                    <ProjectGrid>
+                        {projects.map((project) => (
+                            <ProjectCard
+                                key={project.id}
+                                $image={project.image}
+                                onClick={() => navigate(`/project/${project.id}`)}
+                            >
+                                <ProjectOverlay>
+                                    <ProjectTitle>{project.title}</ProjectTitle>
+                                    <ProjectDescription>
+                                        {project.hoverDescription.map((line, idx) => (
+                                            <p key={idx}>{line}</p>
+                                        ))}
+                                    </ProjectDescription>
+                                </ProjectOverlay>
+                                <FixedTagList>
+                                    {project.tags.map((tag, idx) => (
+                                        <Tag key={idx} color={tagColorMap[tag]}>{tag}</Tag>
+                                    ))}
+                                </FixedTagList>
+                            </ProjectCard>
+                        ))}
+                    </ProjectGrid>
                 </Section>
                 <Section id="skills">
                     <h2>Skills</h2>

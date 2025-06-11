@@ -4,14 +4,14 @@ import './GlobalFont.css'
 const GlobalStyle = createGlobalStyle`
 
     * {
-        font-family: 'NanumSquare', sans-serif;
+        font-family: 'Pretendard-Regular', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
     body {
-        font-family: 'NanumSquare', sans-serif;
+        font-family: 'Pretendard-Regular', sans-serif;
         line-height: 1.6;
     }
 
