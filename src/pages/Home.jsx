@@ -18,6 +18,7 @@ import {
     InfoBox,
     LeftContent,
     LowerSection,
+    MainProjectCard,
     MainProjectMobile,
     MainSection,
     MobileButtonSection,
@@ -45,7 +46,6 @@ import {
     SplitTextLine,
     StrengthItem,
     StrengthList,
-    StyledButton,
     Tag,
     UpperSection
 } from '../styles/HomeStyles';
@@ -106,6 +106,13 @@ const lightTheme = {
     cardBackgroundColor: 'rgba(230,230,230,0.67)',
     buttonColor: '#5a5a5a',
     reverseButtonColor: '#ffffff',
+    mainCardBackground: '#202632',
+    mainCardHoverBackground: 'rgba(32,38,50,0.81)',
+    mainCardBorder: 'rgba(255, 255, 255, 0.5)',
+    mainCardHoverBorder: 'rgba(255, 255, 255, 0.8)',
+    mainCardTextColor: '#ffffff',
+    mainCardOverlayStart: 'rgba(32,38,50,0.81)',
+    mainCardOverlayEnd: 'rgba(32,38,50,0.81)',
 };
 
 const darkTheme = {
@@ -124,15 +131,37 @@ const darkTheme = {
     cardBackgroundColor: 'rgba(0,0,0,0.61)',
     buttonColor: '#fff',
     reverseButtonColor: '#4e4c4c',
+    mainCardBackground: 'rgba(240, 250, 255, 0.35)',
+    mainCardHoverBackground: 'rgba(240, 250, 255, 0.55)',
+    mainCardBorder: 'rgba(255, 255, 255, 0.6)',
+    mainCardHoverBorder: 'rgba(255, 255, 255, 0.85)',
+    mainCardTextColor: '#111111',
+    mainCardOverlayStart: 'rgba(240, 250, 255, 0.55)',
+    mainCardOverlayEnd: 'rgba(240, 250, 255, 0.55)',
 };
 
 const projects = [
+    {
+        id: 5,
+        title: 'FortiShop',
+        description: '대규모 트래픽 환경에서의 장애 대응 경험 프로젝트',
+        image: '/project5.png',
+        galleryImage: '/project5-2.png',
+        tags: ['Spring Cloud', 'MySQL', 'Redis', 'Kafka', 'Elasticsearch', 'Logstash', 'Prometheus', 'Grafana', 'Vault'],
+        hoverDescription: [
+            '장애 복원력을 갖춘 실전형 MSA 이커머스',
+            'Kafka + Redis + Circuit Breaker 기반 복구 설계',
+            'Saga 패턴 기반 분산 트랜잭션 처리',
+            '적립금, 재고, 결제 등 장애 대응 시나리오 실습'
+        ]
+    },
     {
         id: 1,
         title: 'Zip Bob',
         description: '자취생을 위한, 집에 있는 재료로 다양한 레시피 추천',
         image: '/project1.png',
-        tags: ['Spring', 'Spring Cloud', 'MariaDB', 'MongoDB', 'Redis'],
+        galleryImage: '/project1-2.png',
+        tags: ['Spring', 'Spring Cloud', 'MariaDB', 'MongoDB', 'Redis', 'RabbitMQ', 'Vault'],
         hoverDescription: [
             '냉장고 재료 기반 AI 레시피 추천 서비스',
             'Spring Cloud 기반 MSA 구조 적용',
@@ -144,6 +173,7 @@ const projects = [
         title: 'ChatEAT',
         description: '맛집 랜덤 추천 및 교통, 날씨 정보 제공 챗봇',
         image: '/project2.png',
+        galleryImage: '/project2-2.png',
         tags: ['React', 'Spring', 'MySQL', 'MongoDB', 'Redis', 'AWS'],
         hoverDescription: [
             '특정 위치 주변 맛집 추천 AI 채팅 서비스',
@@ -156,6 +186,7 @@ const projects = [
         title: 'Golang',
         description: '갈등 완화/커뮤니케이션 상승 채팅 웹 서비스',
         image: '/project3.png',
+        galleryImage: '/project3.png',
         tags: ['React', 'Spring', 'MariaDB', 'MongoDB', 'Redis', 'Docker'],
         hoverDescription: [
             'LLM을 이용한 갈등 완화 채팅 서비스',
@@ -168,6 +199,7 @@ const projects = [
         title: 'Portfolio',
         description: '포트폴리오 웹사이트 제작',
         image: '/project4.png',
+        galleryImage: '/project4.png',
         tags: ['React'],
         hoverDescription: [
             'React + Vite를 이용한 안정성 높은 포트폴리오 사이트 구현',
@@ -177,14 +209,16 @@ const projects = [
     }
 ];
 
-const highlights = ["뛰어난 문제 해결 능력", "협업", "소통과 협력", "대규모 트래픽 처리 경험", "꾸준한 학습과 끈기", "보안과 사용자 경험을 최우선"];
+const highlights = ["장애와 여러 문제를 직접 정의하고 끝까지 해결", "높은 문제 해결 능력", "대규모 트래픽 처리 경험",
+    "MSA 환경과 무중단 배포에 최적화된 아키텍처를 설계", "복원력 있고 정합성 높은 시스템을 만드는 데 기여", "비즈니스 문제 해결과 협업의 중요성을 깊이 이해", "적극적인 태도와 긍정적인 성격"];
 
 const strengths = [
-    "뛰어난 문제 해결 능력을 바탕으로 원인을 분석하고 더 나은 방법을 찾아냅니다.",
-    "협업을 중요하게 생각하며, 팀원들과의 원활한 소통과 협력을 통해 최상의 결과를 만들어냅니다.",
-    "대규모 트래픽 처리 경험을 바탕으로 안정적이고 확장 가능한 시스템을 구현합니다.",
-    "꾸준한 학습과 끈기를 바탕으로 어려운 문제를 끝까지 해결해냅니다.",
-    "보안과 사용자 경험을 최우선으로 고려하여 신뢰할 수 있는 서비스를 개발합니다."
+    "실제 서비스 환경에서 마주할 수 있는 장애와 여러 문제를 직접 정의하고 끝까지 해결하는 서버 개발자입니다.",
+    "항상 “왜?”라는 질문을 던지며 문제에 접근하고 높은 문제 해결 능력을 가지고 있습니다.",
+    "대규모 트래픽 처리 경험을 바탕으로 MSA 환경과 무중단 배포에 최적화된 아키텍처를 설계할 수 있습니다.",
+    "기능 구현을 넘어서, 복원력 있고 정합성 높은 시스템을 만드는 데 기여할 수 있는 개발자입니다.",
+    "다양한 팀 프로젝트를 통해 비즈니스 문제 해결과 협업의 중요성을 깊이 이해하고 있습니다.",
+    "적극적인 태도와 긍정적인 성격으로 팀의 시너지를 높입니다."
 ];
 
 const highlightText = (text) => {
@@ -421,10 +455,14 @@ const Home = () => {
                 <MainSection>
                     <UpperSection>
                         <SplitTextLine>Server</SplitTextLine>
-                        <Link
-                            to={`/project/1`}><StyledButton>
-                            <span><GoProjectSymlink/> MAIN PROJECT</span>
-                        </StyledButton>
+                        <Link to={`/project/5`}>
+                            <MainProjectCard>
+                                <div className="center-label">MAIN PROJECT</div>
+                                <div className="text-area">
+                                    <h3>FortiShop</h3>
+                                    <p>대규모 트래픽 환경에서의 장애 대응 경험 프로젝트</p>
+                                </div>
+                            </MainProjectCard>
                         </Link>
                     </UpperSection>
                     <LowerSection>
@@ -445,7 +483,7 @@ const Home = () => {
                     </LowerSection>
                     <MobileButtonSection>
                         <Link
-                            to={`/project/1`}>
+                            to={`/project/5`}>
                             <MainProjectMobile><GoProjectSymlink/> Main Project</MainProjectMobile>
                         </Link>
                     </MobileButtonSection>
@@ -459,7 +497,7 @@ const Home = () => {
                 <SliderContainer id="projects">
                     <Slider {...sliderSettings}>
                         {projects.map((project) => (
-                            <Card key={project.id} $image={project.image}>
+                            <Card key={project.order} $image={project.image}>
                                 <CardContent onClick={() => navigate(`/project/${project.id}`)}>
                                     <h3>{project.title}</h3>
                                     <p>{project.description}</p>
@@ -478,7 +516,6 @@ const Home = () => {
                         <AboutMeTopCategory>
                             <InfoBox>
                                 <p>이름 : 장규민</p>
-                                <p>생년월일 : 1998.05.29</p>
                             </InfoBox>
                             <EducationBox>
                                 <EducationLogo src="/kakao.png" alt="카카오테크부트캠프"/>
@@ -504,7 +541,7 @@ const Home = () => {
                         {projects.map((project) => (
                             <ProjectCard
                                 key={project.id}
-                                $image={project.image}
+                                $image={project.galleryImage}
                                 onClick={() => navigate(`/project/${project.id}`)}
                             >
                                 <ProjectOverlay>

@@ -13,7 +13,7 @@ export const PageWrapper = styled.div`
 export const MainSection = styled.section`
     background-color: ${({theme}) => theme.primaryBackground};
     color: ${({theme}) => theme.textColor};
-    padding: 80px 60px;
+    padding: 120px 80px;
     text-align: center;
     transition: all 0.3s ease;
     user-select: none;
@@ -42,7 +42,11 @@ export const LowerSection = styled.div`
     align-items: flex-start;
     margin-right: 20px;
     margin-left: 20px;
-    margin-bottom: 70px;
+    margin-bottom: 120px;
+
+    @media (max-width: 1380px) {
+        margin-bottom: 70px;
+    }
 
     @media (max-width: 860px) {
         flex-direction: column;
@@ -57,7 +61,7 @@ export const LeftContent = styled.div`
     text-align: left;
 
     p {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
         font-family: "NanumSquareRound", sans-serif;
         font-weight: 400;
         font-style: italic;
@@ -92,9 +96,17 @@ export const SplitTextLine = styled.div`
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: 10rem;
+    font-size: 15rem;
     line-height: 1;
     color: ${({theme}) => theme.primaryTextColor};
+
+    @media (max-width: 2100px) {
+        font-size: 13rem;
+    }
+
+    @media (max-width: 1900px) {
+        font-size: 10rem;
+    }
 
     @media (max-width: 1330px) {
         font-size: 6.5rem;
@@ -105,60 +117,146 @@ export const SplitTextLine = styled.div`
     }
 `;
 
-export const StyledButton = styled.button`
-    background-color: ${({theme}) => theme.reverseColor};
-    color: ${({theme}) => theme.reverseTextColor};
-    border: none;
-    border-radius: 50px;
-    padding: 35px 120px;
-    font-size: 2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-weight: 600;
+export const MainProjectCard = styled.div`
     position: relative;
     overflow: hidden;
-    outline: none;
+    cursor: pointer;
 
-    span {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 180px;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 40px;
+
+    background: ${({theme}) => theme.mainCardBackground};
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1),
+    0 8px 30px rgba(0, 0, 0, 0.2),
+    0 0 4px rgba(255, 255, 255, 0.6);
+
+    border: 1px solid ${({theme}) => theme.mainCardBorder};
+    transition: all 0.4s ease;
+
+    @media (max-width: 1900px) {
+        padding: 40px 100px;
+        max-width: 800px;
     }
 
-    &:after {
+    @media (max-width: 1380px) {
+        display: none;
+    }
+
+    &:hover {
+        background: ${({theme}) => theme.mainCardHoverBackground};
+        box-shadow: inset 0 0 24px rgba(255, 255, 255, 0.12),
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        0 0 8px rgba(255, 255, 255, 0.7);
+        border: 1px solid ${({theme}) => theme.mainCardHoverBorder};
+    }
+
+    &::before {
         content: "";
         position: absolute;
-        left: 0;
-        top: 0;
-        height: 550%;
-        width: 140%;
-        background: #46929c;
-        transition: all .5s ease-in-out;
-        transform: translateX(-90%) translateY(-25%) rotate(45deg);
+        top: -40%;
+        left: -30%;
+        width: 180%;
+        height: 180%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 70%);
+        transform: rotate(10deg);
         z-index: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
     }
 
-    &:hover:after {
-        transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+                to right,
+                ${({theme}) => theme.mainCardOverlayStart},
+                ${({theme}) => theme.mainCardOverlayEnd},
+                ${({theme}) => theme.mainCardOverlayStart}
+        );
+        z-index: 1;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.5s ease;
     }
 
-    &:hover span {
-        transform: scale(1.1);
+    &:hover::after {
+        transform: scaleX(1);
     }
 
-    @media (max-width: 1330px) {
-        padding: 25px 100px;
-        font-size: 20px;
+    .center-label {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: ${({theme}) => theme.mainCardTextColor};
+        z-index: 3;
+        position: relative;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        animation: subtleShake 2.5s ease-in-out infinite;
+
+        @media (max-width: 1900px) {
+            font-size: 2.5rem;
+        }
     }
 
-    @media (max-width: 940px) {
-        display: none;
+    @keyframes subtleShake {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    &:hover .center-label {
+        opacity: 0;
+    }
+
+    .text-area {
+        position: absolute;
+        z-index: 3;
+        padding: 100px 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        color: ${({theme}) => theme.mainCardTextColor};
+
+        h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+
+            @media (max-width: 1900px) {
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.8;
+            opacity: 0.95;
+
+            @media (max-width: 1900px) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &:hover .text-area {
+        opacity: 1;
     }
 `;
 
@@ -178,10 +276,10 @@ export const SocialButton = styled.a`
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 20px 60px;
+    padding: 25px 70px;
     color: ${({theme}) => theme.textColor};
     border-radius: 40px;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     position: relative;
     transition: background-color 0.3s, color 0.3s, border 0.3s ease-in-out;
     border: 1px solid ${({theme}) => theme.textColor};
@@ -216,7 +314,7 @@ export const SocialButton = styled.a`
 
 export const MainProjectMobile = styled.div`
     display: none;
-    @media (max-width: 940px) {
+    @media (max-width: 1380px) {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -517,6 +615,7 @@ export const InfoBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 40px;
     border-radius: 12px;
     border: 1px solid ${({theme}) => theme.borderColor};
@@ -525,7 +624,7 @@ export const InfoBox = styled.div`
     text-align: center;
 
     p {
-        font-size: 1.7rem;
+        font-size: 2.2rem;
         font-weight: 600;
         color: ${({theme}) => theme.textColor};
         margin: 8px 0;
@@ -702,6 +801,9 @@ export const StrengthItem = styled.li`
 
     &:hover strong::after {
         width: 100%;
+        @media (max-width: 1110px) {
+            display: none;
+        }
     }
 
     &:last-child {
@@ -739,11 +841,11 @@ export const ProjectGrid = styled.div`
     gap: 40px;
     justify-content: center;
     align-items: start;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 40px auto;
     padding: 0 20px;
 
-    @media (max-width: 960px) {
+    @media (max-width: 860px) {
         grid-template-columns: 1fr;
         justify-content: center;
     }
@@ -752,8 +854,8 @@ export const ProjectGrid = styled.div`
 export const ProjectCard = styled.div`
     position: relative;
     width: 100%;
-    max-width: 550px;
-    height: 335px;
+    max-width: 700px;
+    height: 380px;
     display: flex;
     flex-direction: column;
 
@@ -764,6 +866,11 @@ export const ProjectCard = styled.div`
     overflow: hidden;
     cursor: pointer;
     margin: 0 auto;
+
+    @media (max-width: 860px) {
+        max-width: 450px;
+        height: 280px;
+    }
 `;
 
 export const ProjectOverlay = styled.div`
@@ -778,11 +885,27 @@ export const ProjectOverlay = styled.div`
 `;
 
 export const ProjectTitle = styled.h3`
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     color: ${({theme}) => theme.textColor};
     margin-bottom: 12px;
     text-align: left;
+
+    @media (max-width: 1000px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 860px) {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: 420px) {
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 390px) {
+        font-size: 1.5rem;
+    }
 `;
 
 export const ProjectDescription = styled.div`
@@ -792,11 +915,23 @@ export const ProjectDescription = styled.div`
     text-align: left;
 
     p {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         color: ${({theme}) => theme.textColor};
         line-height: 1.4;
         font-weight: 500;
         margin: 0;
+
+        @media (max-width: 1000px) {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 860px) {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 0.9rem;
+        }
     }
 `;
 
@@ -820,6 +955,16 @@ export const Tag = styled.span`
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid ${({color}) => `${color}aa`};
     box-shadow: 0 4px 12px ${({color}) => `${color}44`};
+
+    @media (max-width: 1000px) {
+        font-size: 0.9rem;
+        padding: 5px 12px;
+    }
+
+    @media (max-width: 860px) {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
 `;
 
 export const SkillsContainer = styled.div`
