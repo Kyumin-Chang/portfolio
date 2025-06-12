@@ -374,9 +374,21 @@ const Home = () => {
         nextArrow: <CustomNextArrow/>,
         responsive: [
             {
+                breakpoint: 1500,
+                settings: {
+                    centerPadding: "370px",
+                },
+            },
+            {
                 breakpoint: 1400,
                 settings: {
                     centerPadding: "300px",
+                },
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    centerPadding: "250px",
                 },
             },
             {
