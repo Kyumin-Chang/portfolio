@@ -866,6 +866,12 @@ export const ProjectCard = styled.div`
     overflow: hidden;
     cursor: pointer;
     margin: 0 auto;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
 
     @media (max-width: 860px) {
         max-width: 450px;
