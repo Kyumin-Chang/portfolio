@@ -141,9 +141,9 @@ const Project5 = () => {
         localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
     }, [isDarkMode]);
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
