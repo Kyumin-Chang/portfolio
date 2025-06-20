@@ -89,6 +89,7 @@ import {CustomNextArrow, CustomPrevArrow} from '../components/CustomArrows';
 import {Link, useNavigate} from "react-router-dom";
 import ScrollToTopButton from "../components/ScrollToTopButton.jsx";
 import {GoProjectSymlink} from "react-icons/go";
+import {motion} from 'framer-motion';
 
 const lightTheme = {
     background: '#f0f0f5',
@@ -242,7 +243,9 @@ const skills = {
             icon: <FaCloud className="skill-icon" color={"#6DB33F"}/>,
             name: "Spring Cloud",
             level: "intermediate"
-        }
+        },
+        {icon: <SiApachekafka className="skill-icon" color={"#000000"}/>, name: "Kafka", level: "intermediate"},
+        {icon: <SiRabbitmq className="skill-icon" color={"#FF6600"}/>, name: "RabbitMQ", level: "advanced"}
     ],
     Database: [
         {icon: <SiMysql className="skill-icon" color={"#4479A1"}/>, name: "MySQL", level: "advanced"},
@@ -275,8 +278,6 @@ const skills = {
         {icon: <FaJsSquare className="skill-icon" color={"#F7DF1E"}/>, name: "JavaScript", level: "intermediate"},
     ],
     "Other Tools": [
-        {icon: <SiApachekafka className="skill-icon" color={"#000000"}/>, name: "Kafka", level: "intermediate"},
-        {icon: <SiRabbitmq className="skill-icon" color={"#FF6600"}/>, name: "RabbitMQ", level: "advanced"},
         {icon: <SiApachejmeter className="skill-icon" color={"#D22128"}/>, name: "JMeter", level: "intermediate"},
         {icon: <FaGit className="skill-icon" color={"#F05032"}/>, name: "Git", level: "advanced"},
         {icon: <SiNotion className="skill-icon" color={"#000000"}/>, name: "Notion", level: "advanced"},
@@ -343,6 +344,21 @@ const getSkillLevel = (level) => {
         default:
             return "0%";
     }
+};
+
+const fadeUp = {
+    hidden: {opacity: 0, y: 60},
+    visible: {opacity: 1, y: 0, transition: {duration: 0.6, ease: 'easeOut'}},
+};
+
+const fadeLeft = {
+    hidden: {opacity: 0, x: -60},
+    visible: {opacity: 1, x: 0, transition: {duration: 0.7, ease: 'easeOut'}},
+};
+
+const fadeRight = {
+    hidden: {opacity: 0, x: 60},
+    visible: {opacity: 1, x: 0, transition: {duration: 0.7, ease: 'easeOut'}},
 };
 
 const Home = () => {
@@ -466,32 +482,49 @@ const Home = () => {
                 <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
                 <MainSection>
                     <UpperSection>
-                        <SplitTextLine>Server</SplitTextLine>
-                        <Link to={`/project/5`}>
-                            <MainProjectCard>
-                                <div className="center-label">MAIN PROJECT</div>
-                                <div className="text-area">
-                                    <h3>FortiShop</h3>
-                                    <p>대규모 트래픽 환경에서의 장애 대응 경험 프로젝트</p>
-                                </div>
-                            </MainProjectCard>
-                        </Link>
+                        <motion.div variants={fadeLeft} initial="hidden" animate="visible">
+                            <SplitTextLine>Server</SplitTextLine>
+                        </motion.div>
+                        <motion.div variants={fadeRight} initial="hidden" animate="visible">
+                            <Link to={`/project/1`}>
+                                <MainProjectCard>
+                                    <div className="center-label">MAIN TEAM PROJECT</div>
+                                    <div className="text-area">
+                                        <h3>집밥 요리사</h3>
+                                        <p>냉장고에 있는 재료를 기반으로 요리 레시피를 추천하는 서비스</p>
+                                    </div>
+                                </MainProjectCard>
+                            </Link>
+                            <Link to={`/project/5`}>
+                                <MainProjectCard>
+                                    <div className="center-label">MAIN PERSONAL PROJECT</div>
+                                    <div className="text-area">
+                                        <h3>FortiShop</h3>
+                                        <p>대규모 트래픽 환경에서의 장애 대응 경험 프로젝트</p>
+                                    </div>
+                                </MainProjectCard>
+                            </Link>
+                        </motion.div>
                     </UpperSection>
                     <LowerSection>
-                        <LeftContent>
-                            <p>
-                                실전 문제 해결과 깊이 있는 몰입으로
-                            </p>
-                            <p>
-                                성장의 곡선을 만들어 온 서버 개발자,
-                            </p>
-                            <p>
-                                장규민입니다.
-                            </p>
-                        </LeftContent>
-                        <RightContent>
-                            <SplitTextLine>Developer</SplitTextLine>
-                        </RightContent>
+                        <motion.div variants={fadeLeft} initial="hidden" animate="visible">
+                            <LeftContent>
+                                <p>
+                                    실전 문제 해결과 깊이 있는 몰입으로
+                                </p>
+                                <p>
+                                    성장의 곡선을 만들어 온 서버 개발자,
+                                </p>
+                                <p>
+                                    장규민입니다.
+                                </p>
+                            </LeftContent>
+                        </motion.div>
+                        <motion.div variants={fadeRight} initial="hidden" animate="visible">
+                            <RightContent>
+                                <SplitTextLine>Developer</SplitTextLine>
+                            </RightContent>
+                        </motion.div>
                     </LowerSection>
                     <MobileButtonSection>
                         <Link
@@ -499,12 +532,14 @@ const Home = () => {
                             <MainProjectMobile><GoProjectSymlink/> Main Project</MainProjectMobile>
                         </Link>
                     </MobileButtonSection>
-                    <SocialLinks>
-                        <SocialButton href="https://github.com/Kyumin-Chang"
-                                      target="_blank"><FaGithub/> Github</SocialButton>
-                        <SocialButton href="https://velog.io/@lord/posts"
-                                      target="_blank"><SiVelog/> Velog</SocialButton>
-                    </SocialLinks>
+                    <motion.div variants={fadeUp} initial="hidden" animate="visible">
+                        <SocialLinks>
+                            <SocialButton href="https://github.com/Kyumin-Chang"
+                                          target="_blank"><FaGithub/> Github</SocialButton>
+                            <SocialButton href="https://velog.io/@lord/posts"
+                                          target="_blank"><SiVelog/> Velog</SocialButton>
+                        </SocialLinks>
+                    </motion.div>
                 </MainSection>
                 <SliderContainer id="projects">
                     <Slider {...sliderSettings}>
@@ -528,6 +563,7 @@ const Home = () => {
                         <AboutMeTopCategory>
                             <InfoBox>
                                 <p>이름 : 장규민</p>
+                                <p>생년월일 : 1998.05.29</p>
                             </InfoBox>
                             <EducationBox>
                                 <EducationLogo src="/kakao.png" alt="카카오테크부트캠프"/>

@@ -5,6 +5,7 @@ import Project1 from "./pages/Project1.jsx";
 import Project2 from './pages/Project2.jsx';
 import Project3 from './pages/Project3.jsx';
 import Project4 from "./pages/Project4.jsx";
+import Project5 from "./pages/Project5.jsx";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/project/2" element={<Project2/>}/>
                 <Route path="/project/3" element={<Project3/>}/>
                 <Route path="/project/4" element={<Project4/>}/>
+                <Route path="/project/5" element={<Project5/>}/>
             </Routes>
         </>
     );

@@ -127,9 +127,9 @@ export const MainProjectCard = styled.div`
     justify-content: center;
     align-items: center;
 
-    padding: 60px 180px;
-    max-width: 900px;
-    margin: 30px auto;
+    padding: 40px 100px;
+    max-width: 800px;
+    margin: 20px auto;
     border-radius: 40px;
 
     background: ${({theme}) => theme.mainCardBackground};
@@ -195,14 +195,17 @@ export const MainProjectCard = styled.div`
     }
 
     .center-label {
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 700;
         color: ${({theme}) => theme.mainCardTextColor};
         z-index: 3;
         position: relative;
         transition: opacity 0.3s ease;
         pointer-events: none;
-        animation: subtleShake 2.5s ease-in-out infinite;
+        animation: subtleShake 2s ease-in-out infinite;
+
+        text-shadow: 1px 1px 0 ${({theme}) => theme.reverseColor},
+        2px 2px 3px rgba(0, 0, 0, 0.25);
 
         @media (max-width: 1900px) {
             font-size: 2.5rem;
@@ -214,7 +217,7 @@ export const MainProjectCard = styled.div`
             transform: translateY(0);
         }
         50% {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
         100% {
             transform: translateY(0);
@@ -234,7 +237,7 @@ export const MainProjectCard = styled.div`
         color: ${({theme}) => theme.mainCardTextColor};
 
         h3 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 18px;
 
@@ -244,7 +247,7 @@ export const MainProjectCard = styled.div`
         }
 
         p {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 400;
             line-height: 1.8;
             opacity: 0.95;
@@ -624,7 +627,7 @@ export const InfoBox = styled.div`
     text-align: center;
 
     p {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
         font-weight: 600;
         color: ${({theme}) => theme.textColor};
         margin: 8px 0;
@@ -632,27 +635,26 @@ export const InfoBox = styled.div`
 
     @media (max-width: 1130px) {
         p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
 
     @media (max-width: 860px) {
         p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
     }
 
     @media (max-width: 430px) {
         padding: 20px;
         p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
     }
 
     @media (max-width: 390px) {
-        padding: 20px;
         p {
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
     }
 `;
@@ -858,7 +860,6 @@ export const ProjectCard = styled.div`
     height: 380px;
     display: flex;
     flex-direction: column;
-
     background-image: url(${({$image}) => $image});
     background-size: cover;
     background-position: center;
@@ -875,7 +876,7 @@ export const ProjectCard = styled.div`
 
     @media (max-width: 860px) {
         max-width: 450px;
-        height: 280px;
+        height: 340px;
     }
 `;
 
@@ -902,15 +903,15 @@ export const ProjectTitle = styled.h3`
     }
 
     @media (max-width: 860px) {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     @media (max-width: 420px) {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     @media (max-width: 390px) {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 `;
 
@@ -932,11 +933,11 @@ export const ProjectDescription = styled.div`
         }
 
         @media (max-width: 860px) {
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         @media (max-width: 420px) {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
     }
 `;

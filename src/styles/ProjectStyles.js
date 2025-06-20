@@ -109,6 +109,17 @@ export const SlideImg = styled.div`
     }
 `;
 
+export const BackImg = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(${props => props.bgImage});
+    background-size: cover;
+    border-radius: 20px;
+    opacity: 0.2;
+    z-index: 1;
+`;
+
 export const Social = styled.div`
     display: flex;
     justify-content: center;
@@ -364,8 +375,8 @@ export const TechnologyItem = styled.div`
     background: ${({theme, $highlighted}) =>
             $highlighted ? theme.highlightedColor : theme.inboxColor};
     color: ${({theme}) => theme.textColor};
-    box-shadow: ${({theme, $highlighted}) =>
-            $highlighted ? theme.highlightedColor : theme.inboxColor};
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     ${({$highlighted}) =>
             $highlighted &&
@@ -373,6 +384,12 @@ export const TechnologyItem = styled.div`
                 animation: ${glow} 1.5s infinite alternate;
             `
     }
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        background: ${({theme}) => theme.techCardBackgroundColor};
+    }
+
     svg {
         margin-right: 8px;
         font-size: 1.8rem;
@@ -395,7 +412,6 @@ export const TechnologyItem = styled.div`
         font-size: 1rem;
     }
 `;
-
 
 export const ImageContainer = styled.div`
     display: flex;
@@ -983,5 +999,99 @@ export const ProjectImage = styled.img`
     @media (max-width: 500px) {
         width: 90%;
         margin-bottom: 10px;
+    }
+`;
+
+export const ModalOverlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ModalBox = styled.div`
+    background-color: ${({theme}) => theme.primaryBackground};
+    color: ${({theme}) => theme.textColor};
+    padding: 2rem;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+    position: relative;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        color: ${({theme}) => theme.linkHoverColor};
+
+        @media (max-width: 768px) {
+            font-size: 1.6rem;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        white-space: pre-line;
+
+        @media (max-width: 768px) {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 0.9rem;
+        }
+    }
+`;
+
+export const CloseButton = styled.button`
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: ${({theme}) => theme.buttonColor};
+    color: ${({theme}) => theme.reverseButtonColor};
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background-color: ${({theme}) => theme.reverseColor};
+        color: ${({theme}) => theme.reverseTextColor};
     }
 `;
