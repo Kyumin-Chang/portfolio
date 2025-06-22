@@ -79,6 +79,10 @@ export const LeftContent = styled.div`
             font-size: 1.5rem;
             text-align: center;
         }
+
+        @media (max-width: 400px) {
+            white-space: pre-line;
+        }
     }
 `;
 
@@ -877,6 +881,10 @@ export const ProjectCard = styled.div`
     @media (max-width: 860px) {
         max-width: 450px;
         height: 340px;
+    }
+
+    @media (max-width: 470px) {
+        height: 400px;
     }
 `;
 

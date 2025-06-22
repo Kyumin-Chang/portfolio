@@ -235,6 +235,13 @@ export const ProjectSummary = styled.div`
     @media (max-width: 420px) {
         font-size: 1rem;
     }
+
+    @media (max-width: 622px) {
+        ul li span {
+            display: block;
+            margin-top: 4px;
+        }
+    }
 `;
 
 export const ProjectDetails = styled.div`

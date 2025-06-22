@@ -510,10 +510,10 @@ const Home = () => {
                         <motion.div variants={fadeLeft} initial="hidden" animate="visible">
                             <LeftContent>
                                 <p>
-                                    실전 문제 해결과 깊이 있는 몰입으로
+                                    실전 문제 해결과 {"\n"} 깊이 있는 몰입으로
                                 </p>
                                 <p>
-                                    성장의 곡선을 만들어 온 서버 개발자,
+                                    성장의 곡선을 만들어 온 {"\n"} 서버 개발자,
                                 </p>
                                 <p>
                                     장규민입니다.
