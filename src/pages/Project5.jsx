@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import {
     BackImg,
+    BlogIcon,
+    BlogIconWrapper,
     CloseButton,
     ContentCategory,
     ContentCategoryBox,
@@ -362,6 +364,25 @@ const Project5 = () => {
                                         </DetailContent>
                                     </DetailBox>
                                     <ContentCategory>
+                                        Redis 기반 인기 상품 캐싱 시스템 구현
+                                    </ContentCategory>
+                                    <DetailBox hasBlogIcon={true}>
+                                        <DetailContent>
+                                            Redis의 ZSet을 이용해 상품 조회수를 실시간으로 집계하고, 조회수가 높은 상품을 기준으로 인기 상품 Top 10을 추출하여
+                                            Value 캐시로 저장하는 구조를 설계하였습니다.
+                                        </DetailContent>
+                                        {(
+                                            <BlogIconWrapper>
+                                                <BlogIcon
+                                                    href="https://velog.io/@lord/Redis-%EC%BA%90%EC%8B%B1-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%8F%84%EC%9E%85%ED%95%98%EA%B8%B0-%EC%9D%B8%EA%B8%B0-%EC%83%81%ED%92%88-%EC%A1%B0%ED%9A%8C%EC%88%98-%EA%B8%B0%EB%B0%98-%EC%BA%90%EC%8B%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95-%EB%B0%8F-%EC%A0%81%EC%9A%A9"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
+                                                    <StyledVelog/> Velog
+                                                </BlogIcon>
+                                            </BlogIconWrapper>
+                                        )}
+                                    </DetailBox>
+                                    <ContentCategory>
                                         설정 외부화 및 시크릿 보호, 인증 전략 구성
                                     </ContentCategory>
                                     <DetailBox hasBlogIcon={false}>
@@ -583,14 +604,67 @@ const Project5 = () => {
                                         </>
                                     )}
                                 </TSBox>
-                                <TSBox isOpen={openStates[4]} hasBlogIcon={false} onClick={() => toggleBox(4)}>
+                                <TSBox isOpen={openStates[4]} hasBlogIcon={true} onClick={() => toggleBox(4)}>
+                                    <TSHeader>
+                                        <TSHeaderBox>
+                                            <TSMainContent>조회수 기반 인기 상품 캐싱 시스템 설계 및 적용</TSMainContent>
+                                            {(
+                                                <TSBlogIconWrapper onClick={(event) => event.stopPropagation()}>
+                                                    <TSBlogIcon
+                                                        href="https://velog.io/@lord/Redis-%EC%BA%90%EC%8B%B1-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%8F%84%EC%9E%85%ED%95%98%EA%B8%B0-%EC%9D%B8%EA%B8%B0-%EC%83%81%ED%92%88-%EC%A1%B0%ED%9A%8C%EC%88%98-%EA%B8%B0%EB%B0%98-%EC%BA%90%EC%8B%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95-%EB%B0%8F-%EC%A0%81%EC%9A%A9"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer">
+                                                        <StyledVelog/> 블로그 바로가기
+                                                    </TSBlogIcon>
+                                                </TSBlogIconWrapper>
+                                            )}
+                                        </TSHeaderBox>
+                                        <StyledVisualArrowDown isOpen={openStates[4]} hasBlogIcon={true}/>
+                                    </TSHeader>
+                                    {renderStates[4] && (
+                                        <>
+                                            <TSBasicBox>
+                                                문제 상황
+                                                <ProblemContent>
+                                                    상품 상세 페이지 요청이 많아질수록 DB 부하가 심해지고 인기 상품 조회 시 N개의 쿼리가 동시에
+                                                    발생하여 {"\n"} 응답 속도 저하와 서비스 불안정성이 발생하는 가능성을 보았습니다.
+                                                </ProblemContent>
+                                                <ProblemContent>
+                                                    또한, 인기 상품 기준이 실시간 조회수 기반임에도 불구하고 매번 DB를 통해 계산하는 구조는 확장성에 큰
+                                                    제약이 {"\n"} 있다는 생각이 들었습니다.
+                                                </ProblemContent>
+                                            </TSBasicBox>
+                                            <StyledArrowDown/>
+                                            <TSBasicBox>
+                                                해결 방안
+                                                <SolvingContent>
+                                                    상품 조회 시 Redis의 ZSet(`product:views`)에 조회수를 기록하고, 주기적으로 인기 상품 Top N을
+                                                    추출하여 {"\n"} 상세 데이터를 Redis Value로 캐싱하는 구조를 도입하였습니다.
+                                                </SolvingContent>
+                                                <SolvingContent>
+                                                    서버 시작 시와 매 5분마다 캐시를 Preload하며, 상품 수정 시에는 해당 캐시를 명시적으로 삭제하여 최신 상태를
+                                                    {"\n"} 유지하도록 설계하였습니다.
+                                                </SolvingContent>
+                                            </TSBasicBox>
+                                            <StyledArrowDown/>
+                                            <TSBasicBox>
+                                                결론
+                                                <FinalContent>
+                                                    인기 상품 조회 속도가 평균 약 300ms → 30ms로 개선되었으며, DB 접근 빈도 역시 대폭 줄어 {"\n"} 서비스
+                                                    안정성과 응답 속도를 동시에 확보할 수 있었습니다.
+                                                </FinalContent>
+                                            </TSBasicBox>
+                                        </>
+                                    )}
+                                </TSBox>
+                                <TSBox isOpen={openStates[5]} hasBlogIcon={false} onClick={() => toggleBox(5)}>
                                     <TSHeader>
                                         <TSHeaderBox>
                                             <TSMainContent>보상 트랜잭션 범위 정의 및 흐름 개선</TSMainContent>
                                         </TSHeaderBox>
-                                        <StyledVisualArrowDown isOpen={openStates[4]} hasBlogIcon={false}/>
+                                        <StyledVisualArrowDown isOpen={openStates[5]} hasBlogIcon={false}/>
                                     </TSHeader>
-                                    {renderStates[4] && (
+                                    {renderStates[5] && (
                                         <>
                                             <TSBasicBox>
                                                 문제 상황
