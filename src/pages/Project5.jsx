@@ -339,8 +339,8 @@ const Project5 = () => {
                                     </DetailBox>
                                     <DetailBox hasBlogIcon={false}>
                                         <DetailContent>
-                                            장애 발생 시 Circuit Breaker를 통한 요청 차단과 fallback 로직이 정상적으로 동작하도록 {"\n"} 설계하여 전체
-                                            시스템의 복원력을 강화하였습니다.
+                                            트래픽 폭주 상황에서도 안정적인 요청 처리를 위해 Redis 기반 Rate Limiter를 적용하였으며, {"\n"}
+                                            일정 속도 이상으로 들어오는 요청은 자동 차단되어 시스템 과부하를 방지하도록 설계하였습니다.
                                         </DetailContent>
                                     </DetailBox>
                                     <ContentCategory>
@@ -657,14 +657,66 @@ const Project5 = () => {
                                         </>
                                     )}
                                 </TSBox>
-                                <TSBox isOpen={openStates[5]} hasBlogIcon={false} onClick={() => toggleBox(5)}>
+                                <TSBox isOpen={openStates[5]} hasBlogIcon={true} onClick={() => toggleBox(5)}>
+                                    <TSHeader>
+                                        <TSHeaderBox>
+                                            <TSMainContent>Redis 기반 Token Bucket Rate Limiter 구현</TSMainContent>
+                                            {(
+                                                <TSBlogIconWrapper onClick={(event) => event.stopPropagation()}>
+                                                    <TSBlogIcon
+                                                        href="https://velog.io/@lord/Spring-MVC%EC%97%90%EC%84%9C-Redis-%EA%B8%B0%EB%B0%98-Token-Bucket-Rate-Limiter-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer">
+                                                        <StyledVelog/> 블로그 바로가기
+                                                    </TSBlogIcon>
+                                                </TSBlogIconWrapper>
+                                            )}
+                                        </TSHeaderBox>
+                                        <StyledVisualArrowDown isOpen={openStates[5]} hasBlogIcon={true}/>
+                                    </TSHeader>
+                                    {renderStates[5] && (
+                                        <>
+                                            <TSBasicBox>
+                                                문제 상황
+                                                <ProblemContent>
+                                                    특정 API에 대한 비정상적인 반복 요청으로 인해 짧은 시간 내에 트래픽이 몰리며, {"\n"}
+                                                    Redis 캐시 및 DB 부하가 급격히 증가하는 현상이 발생하였습니다.
+                                                </ProblemContent>
+                                                <ProblemContent>
+                                                    당시에는 별도의 트래픽 제어 로직이 없어, 동일 사용자가 짧은 시간 내 수십~수백 건의 요청을 보내는 것을 제한할 수
+                                                    없었고 결과적으로 시스템 전체 응답 속도 저하 및 장애 위험이 높아지는 구조였습니다.
+                                                </ProblemContent>
+                                            </TSBasicBox>
+                                            <StyledArrowDown/>
+                                            <TSBasicBox>
+                                                해결 방안
+                                                <SolvingContent>
+                                                    Token Bucket 알고리즘 기반 Rate Limiter를 구현하여 요청당 1개의 토큰을 차감하도록 하고 {"\n"}
+                                                    초당 토큰이 일정량만 리필되도록 하여 과도한 요청이 차단되도록 설계하였습니다.
+                                                </SolvingContent>
+                                                <SolvingContent>
+                                                    Redis에 사용자별 버킷 상태(`tokens`, `last_refill`)를 저장하고 Lua Script로 처리 로직을
+                                                    Atomic하게 {"\n"} 실행하여 다중 인스턴스에서도 일관된 속도로 요청이 제한되도록 보장하였습니다.
+                                                </SolvingContent>
+                                            </TSBasicBox>
+                                            <StyledArrowDown/>
+                                            <TSBasicBox>
+                                                결론
+                                                <FinalContent>
+                                                    비정상 요청에 대한 차단율이 100%로 개선되었고 API 응답 속도가 기존 대비 약 40% 향상되었습니다.
+                                                </FinalContent>
+                                            </TSBasicBox>
+                                        </>
+                                    )}
+                                </TSBox>
+                                <TSBox isOpen={openStates[6]} hasBlogIcon={false} onClick={() => toggleBox(6)}>
                                     <TSHeader>
                                         <TSHeaderBox>
                                             <TSMainContent>보상 트랜잭션 범위 정의 및 흐름 개선</TSMainContent>
                                         </TSHeaderBox>
-                                        <StyledVisualArrowDown isOpen={openStates[5]} hasBlogIcon={false}/>
+                                        <StyledVisualArrowDown isOpen={openStates[6]} hasBlogIcon={false}/>
                                     </TSHeader>
-                                    {renderStates[5] && (
+                                    {renderStates[6] && (
                                         <>
                                             <TSBasicBox>
                                                 문제 상황
